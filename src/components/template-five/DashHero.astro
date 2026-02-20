@@ -1,0 +1,439 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+}
+
+const { 
+  title = "Monitor Everything", 
+  subtitle = "Real-time analytics and monitoring for your entire infrastructure",
+  ctaText = "Start Free Trial"
+} = Astro.props;
+---
+
+<section class="dash-hero">
+  <div class="hero-background">
+    <div class="grid-pattern"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span class="badge-text">LIVE DEMO AVAILABLE</span>
+    </div>
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <div class="hero-actions">
+      <button class="primary-cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        {ctaText}
+      </button>
+      <button class="secondary-cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="10 8 16 12 10 16 10 8"></polygon>
+        </svg>
+        Watch Demo
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-icon">📊</span>
+        <div class="stat-content">
+          <span class="stat-number">10M+</span>
+          <span class="stat-label">Metrics Tracked</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">⚡</span>
+        <div class="stat-content">
+          <span class="stat-number">99.99%</span>
+          <span class="stat-label">Uptime</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">🌍</span>
+        <div class="stat-content">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Countries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="dashboard-preview">
+      <div class="dashboard-header">
+        <div class="dashboard-nav">
+          <span class="nav-item active">Overview</span>
+          <span class="nav-item">Analytics</span>
+          <span class="nav-item">Alerts</span>
+        </div>
+        <div class="dashboard-actions">
+          <span class="status-indicator online">● Online</span>
+        </div>
+      </div>
+      <div class="dashboard-body">
+        <div class="metric-card">
+          <span class="metric-label">CPU Usage</span>
+          <span class="metric-value">67%</span>
+          <div class="metric-bar">
+            <div class="metric-fill" style="width: 67%"></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Memory</span>
+          <span class="metric-value">82%</span>
+          <div class="metric-bar">
+            <div class="metric-fill" style="width: 82%"></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Network</span>
+          <span class="metric-value">45%</span>
+          <div class="metric-bar">
+            <div class="metric-fill" style="width: 45%"></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Storage</span>
+          <span class="metric-value">91%</span>
+          <div class="metric-bar">
+            <div class="metric-fill" style="width: 91%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dash-hero {
+    min-height: 100vh;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    padding: 120px 2rem 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+  }
+
+  .orb-1 {
+    width: 600px;
+    height: 600px;
+    background: #06b6d4;
+    top: -200px;
+    right: -200px;
+  }
+
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: #8b5cf6;
+    bottom: -100px;
+    left: -100px;
+  }
+
+  .hero-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #06b6d4;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .badge-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #06b6d4;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: white;
+    margin: 0 0 1.5rem 0;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #94a3b8;
+    margin: 0 0 2.5rem 0;
+    max-width: 500px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .primary-cta {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+  }
+
+  .primary-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(6, 182, 212, 0.4);
+  }
+
+  .secondary-cta {
+    background: transparent;
+    color: #06b6d4;
+    border: 2px solid #06b6d4;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .secondary-cta:hover {
+    background: rgba(6, 182, 212, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .stat-icon {
+    font-size: 2.5rem;
+  }
+
+  .stat-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .dashboard-preview {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .dashboard-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dashboard-nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-item {
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .nav-item.active {
+    color: #06b6d4;
+  }
+
+  .dashboard-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .status-indicator {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .status-indicator.online {
+    color: #10b981;
+  }
+
+  .dashboard-body {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .metric-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .metric-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .metric-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .metric-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 100%);
+    border-radius: 3px;
+    animation: progress 2s ease-in-out infinite;
+  }
+
+  @keyframes progress {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(1.05); }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .hero-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-stats {
+      justify-content: center;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+  }
+</style>

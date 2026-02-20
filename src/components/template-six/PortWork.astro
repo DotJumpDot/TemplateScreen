@@ -1,0 +1,256 @@
+---
+const projects = [
+  {
+    id: 1,
+    title: "Neon Dreams",
+    category: "Brand Identity",
+    year: "2024",
+    color: "#ff6b6b",
+    emoji: "🎨"
+  },
+  {
+    id: 2,
+    title: "Urban Pulse",
+    category: "Web Design",
+    year: "2024",
+    color: "#feca57",
+    emoji: "🌆"
+  },
+  {
+    id: 3,
+    title: "Eco Life",
+    category: "App Design",
+    year: "2023",
+    color: "#1dd1a1",
+    emoji: "🌿"
+  },
+  {
+    id: 4,
+    title: "Tech Flow",
+    category: "Dashboard",
+    year: "2023",
+    color: "#5f27cd",
+    emoji: "💻"
+  },
+  {
+    id: 5,
+    title: "Minimalist",
+    category: "Print Design",
+    year: "2023",
+    color: "#2d3436",
+    emoji: "📄"
+  },
+  {
+    id: 6,
+    title: "Creative Studio",
+    category: "Website",
+    year: "2022",
+    color: "#00d2d3",
+    emoji: "🎯"
+  }
+];
+---
+
+<section class="port-work" id="work">
+  <div class="work-header">
+    <h2 class="work-title">Selected Work</h2>
+    <p class="work-subtitle">A collection of my recent projects</p>
+  </div>
+
+  <div class="work-grid">
+    {projects.map((project, index) => (
+      <div class="project-card" style="--card-color: {project.color}">
+        <div class="project-visual">
+          <div class="project-placeholder" style="background: {project.color}">
+            <span class="project-emoji">{project.emoji}</span>
+          </div>
+          <div class="project-overlay">
+            <button class="view-btn">View Project</button>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">{project.category}</span>
+          <h3 class="project-title">{project.title}</h3>
+          <span class="project-year">{project.year}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="work-footer">
+    <a href="#" class="more-projects-btn">
+      View All Projects
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14"></path>
+        <path d="m12 5 7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  .port-work {
+    width: 100%;
+    padding: 6rem 2rem;
+    background: #0f0f23;
+  }
+
+  .work-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+  }
+
+  .work-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  .work-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+  }
+
+  .project-card {
+    background: #1a1a3e;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-visual {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover .project-placeholder {
+    transform: scale(1.1);
+  }
+
+  .project-emoji {
+    font-size: 6rem;
+  }
+
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+
+  .view-btn {
+    background: white;
+    color: #0f0f23;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .view-btn:hover {
+    transform: scale(1.05);
+  }
+
+  .project-info {
+    padding: 1.5rem;
+  }
+
+  .project-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .project-year {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .work-footer {
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .more-projects-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  }
+
+  .more-projects-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .work-title {
+      font-size: 2.5rem;
+    }
+
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

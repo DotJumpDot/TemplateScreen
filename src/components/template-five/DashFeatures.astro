@@ -1,0 +1,222 @@
+---
+const features = [
+  {
+    id: 1,
+    icon: "📈",
+    title: "Real-time Analytics",
+    description: "Monitor your metrics in real-time with sub-second latency and instant alerts."
+  },
+  {
+    id: 2,
+    icon: "🔔",
+    title: "Smart Alerts",
+    description: "Get notified instantly when something goes wrong. Customize thresholds and channels."
+  },
+  {
+    id: 3,
+    icon: "📊",
+    title: "Custom Dashboards",
+    description: "Build and customize dashboards with drag-and-drop widgets and rich visualizations."
+  },
+  {
+    id: 4,
+    icon: "🔌",
+    title: "Easy Integration",
+    description: "Integrate with 200+ tools and platforms. REST API and webhooks included."
+  },
+  {
+    id: 5,
+    icon: "🔒",
+    title: "Enterprise Security",
+    description: "SOC 2 compliant with SSO, role-based access, and audit logs."
+  },
+  {
+    id: 6,
+    icon: "🚀",
+    title: "Auto Scaling",
+    description: "Handle millions of metrics with our auto-scaling infrastructure."
+  }
+];
+---
+
+<section class="dash-features">
+  <div class="features-header">
+    <h2 class="features-title">Powerful Features</h2>
+    <p class="features-subtitle">Everything you need to monitor your infrastructure</p>
+  </div>
+
+  <div class="features-grid">
+    {features.map((feature) => (
+      <div class="feature-card">
+        <div class="feature-icon">{feature.icon}</div>
+        <h3 class="feature-title">{feature.title}</h3>
+        <p class="feature-description">{feature.description}</p>
+        <a href="#" class="feature-link">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <div class="features-cta">
+    <h3 class="cta-title">Ready to get started?</h3>
+    <p class="cta-subtitle">Start monitoring your infrastructure in minutes</p>
+    <button class="cta-button">Start Free Trial</button>
+  </div>
+</section>
+
+<style>
+  .dash-features {
+    width: 100%;
+    padding: 6rem 2rem;
+    background: #0f172a;
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+  }
+
+  .features-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    margin: 0 0 1rem 0;
+  }
+
+  .features-subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+  }
+
+  .feature-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(6, 182, 212, 0.3);
+  }
+
+  .feature-card:hover::before {
+    opacity: 1;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem 0;
+  }
+
+  .feature-description {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .feature-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #06b6d4;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .feature-link:hover {
+    color: #0891b2;
+    gap: 0.75rem;
+  }
+
+  .features-cta {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 3rem;
+    border-radius: 20px;
+    margin: 0 2rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem 0;
+  }
+
+  .cta-subtitle {
+    color: #94a3b8;
+    margin: 0 0 2rem 0;
+  }
+
+  .cta-button {
+    background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(6, 182, 212, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .features-title {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>

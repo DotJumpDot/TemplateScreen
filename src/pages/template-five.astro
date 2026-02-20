@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DashHeader from '../components/template-five/DashHeader.astro';
+import DashHero from '../components/template-five/DashHero.astro';
+import DashFeatures from '../components/template-five/DashFeatures.astro';
+import DashFooter from '../components/template-five/DashFooter.astro';
+---
+
+<Layout title="MonitorX - Real-time Analytics Dashboard">
+  <main>
+    <DashHeader />
+    <DashHero />
+    <DashFeatures />
+    <DashFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  a {
+    color: inherit;
+  }
+</style>

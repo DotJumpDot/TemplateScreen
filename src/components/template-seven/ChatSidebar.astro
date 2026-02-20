@@ -1,0 +1,328 @@
+---
+const { activeChatId = "1" } = Astro.props;
+
+const favorites = [
+  { id: "1", title: "Bee", time: "3w ago", icon: "🐝" },
+  { id: "2", title: "Sawadeekub bro", time: "3w ago", icon: "💗" },
+  { id: "3", title: "Who is 007", time: "3w ago", icon: "💗" },
+];
+
+const coding = [
+  { id: "4", title: "Hello", time: "3w ago" },
+  { id: "5", title: "Hello bro", time: "3w ago" },
+];
+
+const life = [
+  { id: "6", title: "Hi bro", time: "1mo ago" },
+  { id: "7", title: "Hello what are u doing", time: "1mo ago" },
+];
+---
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <button class="new-chat-btn">
+      <span class="plus-icon">+</span> New Chat
+    </button>
+    <button class="collapse-sidebar-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="sidebar-content">
+    <div class="section">
+      <div class="section-header">
+        <span class="star-icon">★</span> Favorites <span class="badge">4</span>
+      </div>
+      <div class="section-list">
+        {favorites.map(chat => (
+          <div class={`chat-item ${chat.id === activeChatId ? 'active' : ''}`}>
+            <div class="chat-icon">{chat.icon}</div>
+            <div class="chat-info">
+              <span class="chat-title">{chat.title}</span>
+              <span class="chat-time">{chat.time}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="section collapsed">
+      <div class="section-header">
+        <span class="chevron">⌄</span> Coding <span class="badge">2</span>
+      </div>
+      <div class="section-list">
+        {coding.map(chat => (
+          <div class="chat-item">
+            <span class="chat-title">{chat.title}</span>
+            <span class="chat-time">{chat.time}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="section collapsed">
+      <div class="section-header">
+        <span class="chevron">⌄</span> Life <span class="badge">2</span>
+      </div>
+      <div class="section-list">
+        {life.map(chat => (
+          <div class="chat-item">
+            <span class="chat-title">{chat.title}</span>
+            <span class="chat-time">{chat.time}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <button class="footer-btn">
+      <span class="folder-icon">📁</span> New Folder
+    </button>
+    <div class="recent-chats">
+      <div class="footer-chat-item">
+        <span class="chat-title">Help me code</span>
+        <span class="chat-time">3w ago</span>
+      </div>
+      <div class="footer-chat-item">
+        <span class="chat-title">Hello</span>
+        <span class="chat-time">1mo ago</span>
+      </div>
+      <div class="footer-chat-item">
+        <span class="chat-title">Hi What ur name bro</span>
+      </div>
+    </div>
+    <div class="footer-actions">
+      <button class="archive-btn">
+        <span class="archive-icon">📥</span> Archive
+      </button>
+      <button class="settings-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19.4 15C20.3 14.3 20.3 13 19.5 12.4L18.7 11.8C18.6 11.6 18.6 11.4 18.6 11.2C18.6 11 18.6 10.8 18.7 10.6L19.5 10C20.3 9.4 20.3 8.1 19.4 7.4L17.6 5.6C16.9 4.7 15.6 4.7 15 5.5L14.4 6.3C14.2 6.4 14 6.4 13.8 6.4C13.6 6.4 13.4 6.4 13.2 6.3L12.6 5.5C12 4.7 10.7 4.7 10 5.6L8.2 7.4C7.3 8.1 7.3 9.4 8.1 10L8.9 10.6C9 10.8 9 11 9 11.2C9 11.4 9 11.6 8.9 11.8L8.1 12.4C7.3 13 7.3 14.3 8.2 15L10 16.8C10.7 17.7 12 17.7 12.6 16.9L13.2 16.1C13.4 16 13.6 16 13.8 16C14 16 14.2 16 14.4 16.1L15 16.9C15.6 17.7 16.9 17.7 17.6 16.8L19.4 15Z" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: #0f0f0f;
+    border-right: 1px solid #262626;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    color: #e5e5e5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .sidebar-header {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .new-chat-btn {
+    flex: 1;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .new-chat-btn:hover {
+    background-color: #ff3333;
+  }
+
+  .collapse-sidebar-btn {
+    background: transparent;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .collapse-sidebar-btn:hover {
+    background-color: #262626;
+  }
+
+  .sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #a3a3a3;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+  .section-header:hover {
+    background-color: #262626;
+    color: #e5e5e5;
+  }
+
+  .star-icon {
+    color: #ff6b6b;
+  }
+
+  .badge {
+    margin-left: auto;
+    background-color: #262626;
+    color: #a3a3a3;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+  }
+
+  .section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .chat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .chat-item:hover {
+    background-color: #1f1f1f;
+  }
+
+  .chat-item.active {
+    background-color: #1f2937;
+    border-left: 3px solid #10b981;
+  }
+
+  .chat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+  }
+
+  .chat-title {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #e5e5e5;
+  }
+
+  .chat-time {
+    font-size: 0.75rem;
+    color: #737373;
+  }
+
+  .sidebar-footer {
+    border-top: 1px solid #262626;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-btn, .archive-btn {
+    background: transparent;
+    border: none;
+    color: #a3a3a3;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .footer-btn:hover, .archive-btn:hover {
+    background-color: #262626;
+    color: #e5e5e5;
+  }
+
+  .footer-chat-item {
+    padding: 0.4rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+  .footer-chat-item:hover {
+    background-color: #1f1f1f;
+  }
+
+  .footer-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  .settings-btn {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .settings-btn:hover {
+    background-color: #262626;
+  }
+
+  /* Custom scrollbar */
+  .sidebar-content::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .sidebar-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .sidebar-content::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 4px;
+  }
+
+  .sidebar-content::-webkit-scrollbar-thumb:hover {
+    background: #525252;
+  }
+</style>

@@ -1,0 +1,198 @@
+---
+---
+
+<div class="chat-input-container">
+  <div class="input-box">
+    <textarea placeholder="Send a message..." rows="1"></textarea>
+    <div class="input-actions">
+      <button class="attach-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="send-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="22" y1="2" x2="11" y2="13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#ff4b4b"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="input-footer">
+    <div class="toggles">
+      <label class="toggle-group">
+        <span class="toggle-label">Enter to send</span>
+        <div class="toggle-switch checked">
+          <div class="knob"></div>
+        </div>
+        <span class="key-hint">Shift+Enter for new line</span>
+      </label>
+
+      <label class="toggle-group">
+        <div class="toggle-switch">
+          <div class="knob"></div>
+        </div>
+        <span class="toggle-icon">🌐</span> Web search enabled
+      </label>
+
+      <label class="toggle-group">
+        <div class="toggle-switch">
+          <div class="knob"></div>
+        </div>
+        <span class="toggle-icon">🖼️</span> Image search enabled
+      </label>
+
+      <button class="cube-btn">
+        <span class="cube-icon">🎲</span> 8 <span class="chevron">⌄</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .chat-input-container {
+    padding: 1rem 2rem 2rem 2rem;
+    background-color: #0f0f0f;
+    border-top: 1px solid #262626;
+  }
+
+  .input-box {
+    background-color: #171717;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .input-box:focus-within {
+    border-color: #404040;
+  }
+
+  textarea {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #e5e5e5;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: none;
+    outline: none;
+    min-height: 24px;
+    max-height: 200px;
+  }
+
+  .input-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .attach-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #a3a3a3;
+    padding: 0.4rem;
+    border-radius: 6px;
+    display: flex;
+  }
+
+  .attach-btn:hover {
+    background-color: #262626;
+    color: #e5e5e5;
+  }
+
+  .send-btn {
+    background-color: #ff4b4b;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+  }
+
+  .send-btn:hover {
+    background-color: #ff3333;
+  }
+
+  .input-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #a3a3a3;
+  }
+
+  .toggles {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .toggle-switch {
+    width: 36px;
+    height: 20px;
+    background-color: #262626;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.2s;
+  }
+
+  .toggle-switch.checked {
+    background-color: #ff4b4b; /* Or primary color */
+  }
+
+  .knob {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+  }
+
+  .toggle-switch.checked .knob {
+    transform: translateX(16px);
+  }
+
+  .key-hint {
+    font-size: 0.75rem;
+    color: #737373;
+  }
+
+  .cube-btn {
+    background-color: #262626;
+    border: 1px solid #404040;
+    color: #e5e5e5;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+
+  .cube-btn:hover {
+    background-color: #333;
+  }
+</style>

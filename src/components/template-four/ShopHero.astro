@@ -1,0 +1,353 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  discount?: string;
+  ctaText?: string;
+}
+
+const { 
+  title = "Summer Sale Collection", 
+  subtitle = "Discover amazing deals on trending products",
+  discount = "UP TO 50% OFF",
+  ctaText = "Shop Now"
+} = Astro.props;
+---
+
+<section class="shop-hero">
+  <div class="hero-content">
+    <div class="discount-badge">{discount}</div>
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <div class="hero-actions">
+      <button class="primary-cta">{ctaText}</button>
+      <button class="secondary-cta">
+        <span>View All Products</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">10K+</span>
+        <span class="stat-label">Products</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">50K+</span>
+        <span class="stat-label">Customers</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">4.9★</span>
+        <span class="stat-label">Rating</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-products">
+      <div class="product-card product-1">
+        <div class="product-image">
+          <div class="product-placeholder">👟</div>
+        </div>
+        <div class="product-info">
+          <span class="product-price">$129</span>
+          <span class="product-badge">-30%</span>
+        </div>
+      </div>
+      <div class="product-card product-2">
+        <div class="product-image">
+          <div class="product-placeholder">👜</div>
+        </div>
+        <div class="product-info">
+          <span class="product-price">$89</span>
+          <span class="product-badge">-25%</span>
+        </div>
+      </div>
+      <div class="product-card product-3">
+        <div class="product-image">
+          <div class="product-placeholder">⌚</div>
+        </div>
+        <div class="product-info">
+          <span class="product-price">$299</span>
+          <span class="product-badge">-40%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .shop-hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+    display: flex;
+    align-items: center;
+    padding: 120px 2rem 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shop-hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+    animation: float 20s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-50px, 50px); }
+  }
+
+  .hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .discount-badge {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin: 0 0 1.5rem 0;
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+  }
+
+  .primary-cta {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  }
+
+  .primary-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+  }
+
+  .secondary-cta {
+    background: white;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    padding: 1.25rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .secondary-cta:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff6b6b;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 50px;
+    background: #e0e0e0;
+  }
+
+  .hero-visual {
+    position: relative;
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .floating-products {
+    position: relative;
+    height: 500px;
+  }
+
+  .product-card {
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: all 0.4s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-1 {
+    width: 220px;
+    top: 50px;
+    left: 0;
+    animation: floatCard 6s ease-in-out infinite;
+  }
+
+  .product-2 {
+    width: 200px;
+    top: 180px;
+    right: 20px;
+    animation: floatCard 6s ease-in-out infinite 2s;
+  }
+
+  .product-3 {
+    width: 240px;
+    top: 320px;
+    left: 50px;
+    animation: floatCard 6s ease-in-out infinite 4s;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .product-image {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .product-placeholder {
+    font-size: 4rem;
+  }
+
+  .product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+
+  .product-badge {
+    background: #ff6b6b;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 968px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-stats {
+      justify-content: center;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+  }
+</style>

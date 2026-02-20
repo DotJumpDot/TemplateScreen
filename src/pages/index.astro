@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
   <main class="catalog">
     <header class="catalog-header">
       <h1 class="catalog-title">Template Screen</h1>
-      <p class="catalog-subtitle">A collection of high-quality landing page templates to demonstrate various styles to customers</p>
+      <p class="catalog-subtitle">A collection of 8 high-quality landing page templates to demonstrate various styles to customers</p>
     </header>
 
     <section class="templates-grid">
@@ -79,6 +79,133 @@ import Layout from '../layouts/Layout.astro';
           <h2 class="card-title">Modern SaaS / Creative</h2>
           <p class="card-description">Sleek, dark mode with vibrant gradients and modern UI elements</p>
           <span class="card-tag modern-tag">SaaS</span>
+        </div>
+      </a>
+
+      <a href="/template-four" class="template-card shopping">
+        <div class="card-preview">
+          <div class="preview-header shopping-header">
+            <div class="preview-logo shopping-logo">🛍️</div>
+            <div class="preview-nav shopping-nav">
+              <span class="shopping-line"></span>
+              <span class="shopping-line"></span>
+              <span class="shopping-line"></span>
+            </div>
+          </div>
+          <div class="preview-content shopping-content">
+            <div class="shopping-badge">50% OFF</div>
+            <div class="shopping-title">ShopVibe</div>
+            <div class="shopping-button"></div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">Shopping / E-commerce</h2>
+          <p class="card-description">Vibrant, product-focused design with modern shopping features</p>
+          <span class="card-tag shopping-tag">E-commerce</span>
+        </div>
+      </a>
+
+      <a href="/template-five" class="template-card dashboard">
+        <div class="card-preview">
+          <div class="preview-header dashboard-header">
+            <div class="preview-logo dashboard-logo">📊</div>
+            <div class="preview-nav dashboard-nav">
+              <span class="dashboard-line"></span>
+              <span class="dashboard-line"></span>
+              <span class="dashboard-line"></span>
+            </div>
+          </div>
+          <div class="preview-content dashboard-content">
+            <div class="dashboard-metric">
+              <span class="metric-value">67%</span>
+              <div class="metric-bar"></div>
+            </div>
+            <div class="dashboard-title">MonitorX</div>
+            <div class="dashboard-button"></div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">Dashboard / Monitoring</h2>
+          <p class="card-description">Dark theme with real-time metrics and data visualization</p>
+          <span class="card-tag dashboard-tag">Analytics</span>
+        </div>
+      </a>
+
+      <a href="/template-six" class="template-card portfolio">
+        <div class="card-preview">
+          <div class="preview-header portfolio-header">
+            <div class="preview-logo portfolio-logo">AR.</div>
+            <div class="preview-nav portfolio-nav">
+              <span class="portfolio-line"></span>
+              <span class="portfolio-line"></span>
+              <span class="portfolio-line"></span>
+            </div>
+          </div>
+          <div class="preview-content portfolio-content">
+            <div class="portfolio-emoji">🎨</div>
+            <div class="portfolio-title">Alex Rivera</div>
+            <div class="portfolio-button"></div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">Creative Portfolio</h2>
+          <p class="card-description">Bold, artistic design showcasing creative work and projects</p>
+          <span class="card-tag portfolio-tag">Portfolio</span>
+        </div>
+      </a>
+      <a href="/template-seven" class="template-card chat">
+        <div class="card-preview">
+          <div class="preview-header chat-header">
+            <div class="preview-logo chat-logo">🤖</div>
+            <div class="preview-nav chat-nav">
+              <span class="chat-line"></span>
+              <span class="chat-line"></span>
+              <span class="chat-line"></span>
+            </div>
+          </div>
+          <div class="preview-content chat-content">
+            <div class="chat-bubble user"></div>
+            <div class="chat-bubble ai"></div>
+            <div class="chat-input-bar"></div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">AI Chat Interface</h2>
+          <p class="card-description">Modern, dark-themed chat UI with sidebar and message history</p>
+          <span class="card-tag chat-tag">AI / Chat</span>
+        </div>
+      </a>
+      <a href="/template-eight" class="template-card dashboard-admin">
+        <div class="card-preview">
+          <div class="preview-header dashboard-admin-header">
+            <div class="preview-logo dashboard-admin-logo">📊</div>
+            <div class="preview-nav dashboard-admin-nav">
+              <span class="dashboard-admin-line"></span>
+              <span class="dashboard-admin-line"></span>
+              <span class="dashboard-admin-line"></span>
+            </div>
+          </div>
+          <div class="preview-content dashboard-admin-content">
+            <div class="dashboard-admin-sidebar">
+              <div class="sidebar-lines"></div>
+            </div>
+            <div class="dashboard-admin-main">
+              <div class="admin-header-bar"></div>
+              <div class="admin-stats-row">
+                <div class="admin-stat-box"></div>
+                <div class="admin-stat-box"></div>
+                <div class="admin-stat-box"></div>
+              </div>
+              <div class="admin-chart-area">
+                <div class="admin-chart-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">Admin Dashboard</h2>
+          <p class="card-description">Professional admin interface with sidebar navigation, stats cards, and charts</p>
+          <span class="card-tag dashboard-admin-tag">Admin</span>
         </div>
       </a>
     </section>
@@ -160,9 +287,9 @@ import Layout from '../layouts/Layout.astro';
 
   .templates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto 4rem;
   }
 
@@ -175,7 +302,7 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.6s ease-out, transform 0.2s ease-out, box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .template-card.retro {
@@ -184,6 +311,18 @@ import Layout from '../layouts/Layout.astro';
 
   .template-card.modern {
     background: #0a0a14;
+  }
+
+  .template-card.shopping {
+    background: white;
+  }
+
+  .template-card.dashboard {
+    background: #0f172a;
+  }
+
+  .template-card.portfolio {
+    background: #0f0f23;
   }
 
   @keyframes fadeInUp {
@@ -209,6 +348,26 @@ import Layout from '../layouts/Layout.astro';
     animation-delay: 0.3s;
   }
 
+  .template-card:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  .template-card:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  .template-card:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
+  .template-card:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+
+  .template-card:nth-child(8) {
+    animation-delay: 0.8s;
+  }
+
   .template-card.visible {
     opacity: 1;
     transform: translateY(0);
@@ -231,10 +390,35 @@ import Layout from '../layouts/Layout.astro';
     transition-delay: 0.3s;
   }
 
+  .template-card:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .template-card:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+
+  .template-card:nth-child(6) {
+    transition-delay: 0.6s;
+  }
+
+  .template-card:nth-child(7) {
+    transition-delay: 0.7s;
+  }
+
+  .template-card:nth-child(8) {
+    transition-delay: 0.8s;
+  }
+
   .templates-grid:hover .template-card,
   .template-card:nth-child(1):hover,
   .template-card:nth-child(2):hover,
-  .template-card:nth-child(3):hover {
+  .template-card:nth-child(3):hover,
+  .template-card:nth-child(4):hover,
+  .template-card:nth-child(5):hover,
+  .template-card:nth-child(6):hover,
+  .template-card:nth-child(7):hover,
+  .template-card:nth-child(8):hover {
     transition-delay: 0s;
   }
 
@@ -255,6 +439,18 @@ import Layout from '../layouts/Layout.astro';
 
   .template-card.modern .card-preview {
     background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+  }
+
+  .template-card.shopping .card-preview {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+  }
+
+  .template-card.dashboard .card-preview {
+    background: #0f172a;
+  }
+
+  .template-card.portfolio .card-preview {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
   }
 
   .preview-header {
@@ -285,6 +481,23 @@ import Layout from '../layouts/Layout.astro';
     background-clip: text;
   }
 
+  .shopping-logo {
+    font-size: 1.2rem;
+  }
+
+  .dashboard-logo {
+    font-size: 1.2rem;
+  }
+
+  .portfolio-logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .preview-nav {
     display: flex;
     gap: 0.5rem;
@@ -307,6 +520,27 @@ import Layout from '../layouts/Layout.astro';
     width: 25px;
     height: 3px;
     background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+
+  .shopping-line {
+    width: 25px;
+    height: 3px;
+    background: #ff6b6b;
+    border-radius: 2px;
+  }
+
+  .dashboard-line {
+    width: 25px;
+    height: 3px;
+    background: rgba(6, 182, 212, 0.5);
+    border-radius: 2px;
+  }
+
+  .portfolio-line {
+    width: 25px;
+    height: 3px;
+    background: rgba(255, 107, 107, 0.7);
     border-radius: 2px;
   }
 
@@ -393,6 +627,113 @@ import Layout from '../layouts/Layout.astro';
     margin: 0 auto;
   }
 
+  .shopping-content {
+    text-align: center;
+    position: relative;
+  }
+
+  .shopping-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #ff6b6b;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+  }
+
+  .shopping-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+  }
+
+  .shopping-button {
+    width: 80px;
+    height: 28px;
+    background: #ff6b6b;
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+
+  .dashboard-content {
+    text-align: center;
+    position: relative;
+  }
+
+  .dashboard-metric {
+    background: rgba(6, 182, 212, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+
+  .metric-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #06b6d4;
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .metric-bar::after {
+    content: '';
+    display: block;
+    width: 67%;
+    height: 100%;
+    background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 100%);
+    border-radius: 2px;
+  }
+
+  .dashboard-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .dashboard-button {
+    width: 80px;
+    height: 28px;
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+
+  .portfolio-content {
+    text-align: center;
+  }
+
+  .portfolio-emoji {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .portfolio-button {
+    width: 80px;
+    height: 28px;
+    background: #ff6b6b;
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+
   .card-info {
     padding: 1.5rem;
   }
@@ -405,7 +746,11 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .template-card.retro .card-title,
-  .template-card.modern .card-title {
+  .template-card.modern .card-title,
+  .template-card.dashboard .card-title,
+  .template-card.portfolio .card-title,
+  .template-card.chat .card-title,
+  .template-card.dashboard-admin .card-title {
     color: white;
   }
 
@@ -417,7 +762,11 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .template-card.retro .card-description,
-  .template-card.modern .card-description {
+  .template-card.modern .card-description,
+  .template-card.dashboard .card-description,
+  .template-card.portfolio .card-description,
+  .template-card.chat .card-description,
+  .template-card.dashboard-admin .card-description {
     color: rgba(255, 255, 255, 0.8);
   }
 
@@ -437,6 +786,18 @@ import Layout from '../layouts/Layout.astro';
 
   .modern-tag {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .shopping-tag {
+    background: #ff6b6b;
+  }
+
+  .dashboard-tag {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  }
+
+  .portfolio-tag {
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
   }
 
   .tech-info {
@@ -490,6 +851,184 @@ import Layout from '../layouts/Layout.astro';
 
   .tech-icon {
     font-size: 1.3rem;
+  }
+
+  .template-card.chat {
+    background: #0f0f0f;
+  }
+
+  .template-card.chat .card-preview {
+    background: #0f0f0f;
+    border-bottom: 1px solid #262626;
+  }
+
+  .chat-logo {
+    font-size: 1.5rem;
+  }
+
+  .chat-nav {
+    display: flex;
+    gap: 6px;
+  }
+
+  .chat-line {
+    width: 20px;
+    height: 2px;
+    background-color: #404040;
+    border-radius: 1px;
+  }
+
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 1rem;
+  }
+
+  .chat-bubble {
+    height: 24px;
+    border-radius: 12px;
+    width: 70%;
+  }
+
+  .chat-bubble.user {
+    background-color: #3b0764;
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+  }
+
+  .chat-bubble.ai {
+    background-color: #262626;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+  }
+
+  .chat-input-bar {
+    margin-top: auto;
+    height: 30px;
+    background-color: #171717;
+    border-radius: 8px;
+    border: 1px solid #262626;
+    width: 100%;
+  }
+
+  .chat-tag {
+    background: #8b5cf6;
+    color: white;
+  }
+
+  .template-card.dashboard-admin {
+    background: #0f0f0f;
+  }
+
+  .template-card.dashboard-admin .card-preview {
+    background: #0f0f0f;
+    border-bottom: 1px solid #262626;
+  }
+
+  .dashboard-admin-logo {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-admin-nav {
+    display: flex;
+    gap: 6px;
+  }
+
+  .dashboard-admin-line {
+    width: 16px;
+    height: 2px;
+    background-color: #404040;
+    border-radius: 1px;
+  }
+
+  .dashboard-admin-content {
+    display: flex;
+    gap: 8px;
+    padding-top: 1rem;
+  }
+
+  .dashboard-admin-sidebar {
+    width: 40px;
+    background-color: #171717;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px;
+  }
+
+  .sidebar-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .sidebar-lines::before,
+  .sidebar-lines::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #404040;
+    border-radius: 1px;
+  }
+
+  .sidebar-lines::before {
+    width: 20px;
+  }
+
+  .sidebar-lines::after {
+    width: 16px;
+  }
+
+  .dashboard-admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .admin-header-bar {
+    height: 12px;
+    background-color: #262626;
+    border-radius: 4px;
+  }
+
+  .admin-stats-row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .admin-stat-box {
+    flex: 1;
+    height: 24px;
+    background-color: #171717;
+    border: 1px solid #262626;
+    border-radius: 4px;
+  }
+
+  .admin-chart-area {
+    height: 32px;
+    background-color: #171717;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+    gap: 3px;
+  }
+
+  .admin-chart-bar {
+    flex: 1;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 2px;
+    height: 60%;
+  }
+
+  .dashboard-admin-tag {
+    background: rgba(83, 86, 255, 0.452);
+    color: #ffffff;
   }
 
   @media (max-width: 768px) {

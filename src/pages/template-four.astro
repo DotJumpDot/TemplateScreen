@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ShopHeader from '../components/template-four/ShopHeader.astro';
+import ShopHero from '../components/template-four/ShopHero.astro';
+import ShopProducts from '../components/template-four/ShopProducts.astro';
+import ShopFooter from '../components/template-four/ShopFooter.astro';
+---
+
+<Layout title="ShopVibe - Your One-Stop Shop">
+  <main>
+    <ShopHeader />
+    <ShopHero />
+    <ShopProducts />
+    <ShopFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+</style>

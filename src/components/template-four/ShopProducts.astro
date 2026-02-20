@@ -1,0 +1,296 @@
+---
+const products = [
+  { id: 1, name: "Sneakers Pro", price: "$129", oldPrice: "$179", emoji: "👟", badge: "-28%", category: "Shoes" },
+  { id: 2, name: "Leather Bag", price: "$89", oldPrice: "$120", emoji: "👜", badge: "-26%", category: "Bags" },
+  { id: 3, name: "Smart Watch", price: "$299", oldPrice: "$450", emoji: "⌚", badge: "-34%", category: "Electronics" },
+  { id: 4, name: "Headphones", price: "$149", oldPrice: "$199", emoji: "🎧", badge: "-25%", category: "Audio" },
+  { id: 5, name: "Sunglasses", price: "$79", oldPrice: "$110", emoji: "🕶️", badge: "-28%", category: "Accessories" },
+  { id: 6, name: "Backpack", price: "$69", oldPrice: "$99", emoji: "🎒", badge: "-30%", category: "Bags" },
+  { id: 7, name: "Camera", price: "$599", oldPrice: "$799", emoji: "📷", badge: "-25%", category: "Electronics" },
+  { id: 8, name: "Gaming Mouse", price: "$59", oldPrice: "$79", emoji: "🖱️", badge: "-25%", category: "Electronics" },
+];
+---
+
+<section class="products-section">
+  <div class="section-header">
+    <h2 class="section-title">Trending Products</h2>
+    <p class="section-subtitle">Discover our best-selling items</p>
+    <div class="section-actions">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Shoes</button>
+      <button class="filter-btn">Bags</button>
+      <button class="filter-btn">Electronics</button>
+      <button class="filter-btn">Accessories</button>
+    </div>
+  </div>
+
+  <div class="products-grid">
+    {products.map((product) => (
+      <div class="product-card" data-category={product.category}>
+        <div class="product-card-image">
+          <div class="product-placeholder">{product.emoji}</div>
+          <button class="wishlist-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </button>
+          <span class="product-badge">{product.badge}</span>
+        </div>
+        <div class="product-card-content">
+          <span class="product-category">{product.category}</span>
+          <h3 class="product-name">{product.name}</h3>
+          <div class="product-price-row">
+            <span class="product-price">{product.price}</span>
+            <span class="product-old-price">{product.oldPrice}</span>
+          </div>
+          <button class="add-to-cart">
+            <span>Add to Cart</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="section-footer">
+    <button class="load-more-btn">
+      Load More Products
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14"></path>
+        <path d="m12 5 7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<style>
+  .products-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    background: white;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0 0 2rem 0;
+  }
+
+  .section-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #4a4a4a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background: #ffe0e0;
+    color: #ff6b6b;
+  }
+
+  .filter-btn.active {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid #f0f0f0;
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-card-image {
+    position: relative;
+    height: 250px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f0f0f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-placeholder {
+    font-size: 6rem;
+  }
+
+  .wishlist-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    color: #4a4a4a;
+  }
+
+  .product-card:hover .wishlist-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .wishlist-btn:hover {
+    background: #ff6b6b;
+    color: white;
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #ff6b6b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .product-card-content {
+    padding: 1.5rem;
+  }
+
+  .product-category {
+    display: inline-block;
+    background: #f8f9fa;
+    color: #666;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .product-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+  }
+
+  .product-price-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff6b6b;
+  }
+
+  .product-old-price {
+    font-size: 1.1rem;
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .add-to-cart:hover {
+    background: #ff6b6b;
+    transform: translateY(-2px);
+  }
+
+  .section-footer {
+    text-align: center;
+  }
+
+  .load-more-btn {
+    background: white;
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .load-more-btn:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

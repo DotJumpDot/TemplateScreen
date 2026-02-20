@@ -1,0 +1,193 @@
+---
+const stats = [
+  {
+    title: "Total Revenue",
+    value: "$48,294",
+    change: "+12.5%",
+    trend: "up",
+    icon: "💰"
+  },
+  {
+    title: "Total Orders",
+    value: "2,847",
+    change: "+8.2%",
+    trend: "up",
+    icon: "📦"
+  },
+  {
+    title: "Active Users",
+    value: "18,472",
+    change: "+24.3%",
+    trend: "up",
+    icon: "👥"
+  },
+  {
+    title: "Conversion Rate",
+    value: "3.24%",
+    change: "-2.1%",
+    trend: "down",
+    icon: "📈"
+  }
+];
+---
+
+<section class="stats-section">
+  <div class="section-header">
+    <h2 class="section-title">Overview</h2>
+    <button class="export-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="7 10 12 15 17 10" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="12" y1="15" x2="12" y2="3" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Export
+    </button>
+  </div>
+
+  <div class="stats-grid">
+    {stats.map(stat => (
+      <div class="stat-card">
+        <div class="stat-header">
+          <div class="stat-icon">{stat.icon}</div>
+          <button class="stat-menu">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="1" stroke="#737373" stroke-width="2"/>
+              <circle cx="19" cy="12" r="1" stroke="#737373" stroke-width="2"/>
+              <circle cx="5" cy="12" r="1" stroke="#737373" stroke-width="2"/>
+            </svg>
+          </button>
+        </div>
+        <div class="stat-content">
+          <p class="stat-label">{stat.title}</p>
+          <h3 class="stat-value">{stat.value}</h3>
+          <div class={`stat-change ${stat.trend}`}>
+            {stat.trend === 'up' ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="17 6 23 6 23 12" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="17 18 23 18 23 12" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            )}
+            <span>{stat.change}</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .stats-section {
+    padding: 2rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e5e5e5;
+    margin: 0;
+  }
+
+  .export-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #262626;
+    border: 1px solid #404040;
+    color: #e5e5e5;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .export-btn:hover {
+    background-color: #333;
+    border-color: #525252;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background-color: #171717;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.2s;
+  }
+
+  .stat-card:hover {
+    border-color: #404040;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .stat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .stat-menu {
+    background: transparent;
+    border: none;
+    color: #737373;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+  }
+
+  .stat-menu:hover {
+    background-color: #262626;
+    color: #e5e5e5;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: #a3a3a3;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .stat-change {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .stat-change.up {
+    color: #22c55e;
+  }
+
+  .stat-change.down {
+    color: #ef4444;
+  }
+</style>

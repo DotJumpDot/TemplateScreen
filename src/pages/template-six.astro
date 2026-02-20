@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PortHeader from '../components/template-six/PortHeader.astro';
+import PortHero from '../components/template-six/PortHero.astro';
+import PortWork from '../components/template-six/PortWork.astro';
+import PortFooter from '../components/template-six/PortFooter.astro';
+---
+
+<Layout title="Alex Rivera - Creative Designer Portfolio">
+  <main>
+    <PortHeader />
+    <PortHero />
+    <PortWork />
+    <PortFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  a {
+    color: inherit;
+  }
+</style>

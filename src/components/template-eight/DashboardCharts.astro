@@ -1,0 +1,430 @@
+---
+const recentOrders = [
+  { id: "ORD-001", customer: "Alice Smith", product: "Pro Plan", amount: "$99", status: "completed", date: "2 min ago" },
+  { id: "ORD-002", customer: "Bob Johnson", product: "Basic Plan", amount: "$49", status: "processing", date: "5 min ago" },
+  { id: "ORD-003", customer: "Carol White", product: "Enterprise", amount: "$299", status: "completed", date: "12 min ago" },
+  { id: "ORD-004", customer: "David Brown", product: "Pro Plan", amount: "$99", status: "pending", date: "1 hour ago" },
+  { id: "ORD-005", customer: "Eva Green", product: "Basic Plan", amount: "$49", status: "completed", date: "2 hours ago" },
+];
+---
+
+<section class="charts-section">
+  <div class="charts-grid">
+    <div class="chart-card main-chart">
+      <div class="card-header">
+        <h3 class="card-title">Revenue Overview</h3>
+        <div class="chart-actions">
+          <select class="time-select">
+            <option>Last 7 days</option>
+            <option>Last 30 days</option>
+            <option>Last 90 days</option>
+          </select>
+          <button class="btn-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="1" stroke="#737373" stroke-width="2"/>
+              <circle cx="19" cy="12" r="1" stroke="#737373" stroke-width="2"/>
+              <circle cx="5" cy="12" r="1" stroke="#737373" stroke-width="2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart-legend">
+          <div class="legend-item">
+            <div class="legend-dot blue"></div>
+            <span>Revenue</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot purple"></div>
+            <span>Profit</span>
+          </div>
+        </div>
+
+        <div class="bar-chart">
+          <div class="chart-y-axis">
+            <span>$50k</span>
+            <span>$40k</span>
+            <span>$30k</span>
+            <span>$20k</span>
+            <span>$10k</span>
+            <span>$0</span>
+          </div>
+          <div class="chart-bars">
+            <div class="bar-group">
+              <div class="bar blue" style="height: 65%"></div>
+              <div class="bar purple" style="height: 45%"></div>
+              <span class="bar-label">Mon</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar blue" style="height: 80%"></div>
+              <div class="bar purple" style="height: 55%"></div>
+              <span class="bar-label">Tue</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar blue" style="height: 55%"></div>
+              <div class="bar purple" style="height: 35%"></div>
+              <span class="bar-label">Wed</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar blue" style="height: 90%"></div>
+              <div class="bar purple" style="height: 65%"></div>
+              <span class="bar-label">Thu</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar blue" style="height: 70%"></div>
+              <div class="bar purple" style="height: 50%"></div>
+              <span class="bar-label">Fri</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar blue" style="height: 85%"></div>
+              <div class="bar purple" style="height: 60%"></div>
+              <span class="bar-label">Sat</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar blue" style="height: 75%"></div>
+              <div class="bar purple" style="height: 52%"></div>
+              <span class="bar-label">Sun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-card pie-chart">
+      <div class="card-header">
+        <h3 class="card-title">Sales by Category</h3>
+      </div>
+
+      <div class="pie-chart-container">
+        <div class="pie-chart">
+          <div class="pie-segment segment-1"></div>
+          <div class="pie-segment segment-2"></div>
+          <div class="pie-segment segment-3"></div>
+          <div class="pie-segment segment-4"></div>
+        </div>
+        <div class="pie-legend">
+          <div class="legend-item">
+            <div class="legend-dot blue"></div>
+            <span>Electronics</span>
+            <span class="legend-value">35%</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot purple"></div>
+            <span>Clothing</span>
+            <span class="legend-value">28%</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot pink"></div>
+            <span>Home</span>
+            <span class="legend-value">22%</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot green"></div>
+            <span>Other</span>
+            <span class="legend-value">15%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-orders">
+    <div class="card-header">
+      <h3 class="card-title">Recent Orders</h3>
+      <a href="#" class="view-all">View all →</a>
+    </div>
+
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer</th>
+          <th>Product</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {recentOrders.map(order => (
+          <tr>
+            <td><span class="order-id">{order.id}</span></td>
+            <td>{order.customer}</td>
+            <td>{order.product}</td>
+            <td>{order.amount}</td>
+            <td><span class={`status ${order.status}`}>{order.status}</span></td>
+            <td class="date">{order.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  .charts-section {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .chart-card {
+    background-color: #171717;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e5e5e5;
+    margin: 0;
+  }
+
+  .chart-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .time-select {
+    background-color: #262626;
+    border: 1px solid #404040;
+    color: #e5e5e5;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  .btn-icon {
+    background: transparent;
+    border: 1px solid #262626;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #737373;
+  }
+
+  .btn-icon:hover {
+    background-color: #262626;
+    color: #e5e5e5;
+  }
+
+  .chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .chart-legend {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #a3a3a3;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .legend-dot.blue {
+    background-color: #6366f1;
+  }
+
+  .legend-dot.purple {
+    background-color: #8b5cf6;
+  }
+
+  .legend-dot.pink {
+    background-color: #ec4899;
+  }
+
+  .legend-dot.green {
+    background-color: #22c55e;
+  }
+
+  .bar-chart {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #737373;
+    min-width: 40px;
+  }
+
+  .chart-bars {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 180px;
+  }
+
+  .bar-group {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 100%;
+  }
+
+  .bar {
+    width: 20px;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.2s;
+  }
+
+  .bar:hover {
+    opacity: 0.8;
+  }
+
+  .bar.blue {
+    background-color: #6366f1;
+  }
+
+  .bar.purple {
+    background-color: #8b5cf6;
+  }
+
+  .bar-label {
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.75rem;
+    color: #737373;
+  }
+
+  .pie-chart-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .pie-chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(
+      #6366f1 0deg 126deg,
+      #8b5cf6 126deg 226.8deg,
+      #ec4899 226.8deg 306deg,
+      #22c55e 306deg 360deg
+    );
+  }
+
+  .pie-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .legend-value {
+    margin-left: auto;
+    font-weight: 600;
+  }
+
+  .recent-orders {
+    background-color: #171717;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .view-all {
+    color: #6366f1;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+
+  .view-all:hover {
+    text-decoration: underline;
+  }
+
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .orders-table thead {
+    border-bottom: 1px solid #262626;
+  }
+
+  .orders-table th {
+    text-align: left;
+    padding: 0.75rem 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #737373;
+    text-transform: uppercase;
+  }
+
+  .orders-table td {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #e5e5e5;
+    border-bottom: 1px solid #262626;
+  }
+
+  .order-id {
+    font-family: monospace;
+    color: #a3a3a3;
+  }
+
+  .status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .status.completed {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+  }
+
+  .status.processing {
+    background-color: rgba(99, 102, 241, 0.15);
+    color: #6366f1;
+  }
+
+  .status.pending {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+  }
+
+  .date {
+    color: #737373;
+  }
+</style>

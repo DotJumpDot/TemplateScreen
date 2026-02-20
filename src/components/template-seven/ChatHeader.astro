@@ -1,0 +1,163 @@
+---
+---
+
+<header class="chat-header">
+  <div class="header-left">
+    <div class="dropdown-group">
+      <button class="dropdown-btn orange">
+        <span class="icon">✢</span> Single <span class="chevron">⌄</span>
+      </button>
+      <button class="dropdown-btn purple">
+        Select Model <span class="chevron">⌄</span>
+      </button>
+      <button class="dropdown-btn teal">
+        <span class="icon">📄</span> Select Prompt <span class="chevron">⌄</span>
+      </button>
+      <button class="action-btn green">
+        <span class="icon">✏️</span> Manage Prompts
+      </button>
+    </div>
+    <button class="back-btn">
+      <span class="chevron">‹</span>
+    </button>
+  </div>
+
+  <div class="header-right">
+    <button class="icon-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="icon-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="icon-btn">
+      <span class="lang-icon">EN</span> <span class="chevron">⌄</span>
+    </button>
+    <button class="icon-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="10 17 15 12 10 7" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="15" y1="12" x2="3" y2="12" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="admin-btn">
+      <span class="icon">⚙️</span> Admin <span class="icon">→</span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .chat-header {
+    height: 60px;
+    background-color: #0f0f0f;
+    border-bottom: 1px solid #262626;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    color: #e5e5e5;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .dropdown-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .dropdown-btn, .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: filter 0.2s;
+    color: #000;
+  }
+
+  .dropdown-btn:hover, .action-btn:hover {
+    filter: brightness(1.1);
+  }
+
+  .dropdown-btn.orange {
+    background-color: #f97316;
+    color: white;
+  }
+
+  .dropdown-btn.purple {
+    background-color: #a855f7;
+    color: white;
+  }
+
+  .dropdown-btn.teal {
+    background-color: #14b8a6;
+    color: white;
+  }
+
+  .action-btn.green {
+    background-color: #22c55e;
+    color: white;
+  }
+
+  .back-btn {
+    background: transparent;
+    border: 1px solid #262626;
+    color: #a3a3a3;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .icon-btn {
+    background: transparent;
+    border: 1px solid #262626;
+    color: #e5e5e5;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .icon-btn:hover {
+    background-color: #262626;
+  }
+
+  .admin-btn {
+    background: transparent;
+    border: 1px solid #262626;
+    color: #e5e5e5;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .admin-btn:hover {
+    background-color: #262626;
+  }
+</style>

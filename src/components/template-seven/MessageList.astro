@@ -1,0 +1,263 @@
+---
+const messages = [
+  {
+    id: 1,
+    role: "user",
+    content: "Elysia",
+    time: "11:05 AM"
+  },
+  {
+    id: 2,
+    role: "ai",
+    model: "openai/gpt-o3-mini-high",
+    content: `
+      <p><strong>Elysia</strong> is a genus of marine gastropod molluscs—commonly known as "sea slugs" or "sap-sucking slugs."</p>
+      <ul>
+        <li><strong>Family:</strong> Plakobranchidae</li>
+        <li><strong>Habitat:</strong> Mostly tropical and subtropical shallow waters; they are often found on algae, which they feed on and sometimes incorporate into their own tissues for photosynthesis (a phenomenon called kleptoplasty).</li>
+        <li><strong>Notable species:</strong> <em>Elysia chlorotica</em> (the "solar-powered" slug) and <em>Elysia crispata</em> (the "lettuce sea slug").</li>
+      </ul>
+      <p>These slugs are of interest to researchers because of their ability to retain functional chloroplasts from the algae they consume, allowing them to derive energy from light.</p>
+    `,
+    source: "*Source: DuckDuckGo search result on Elysia (gastropod) [3†L1-L3]",
+    reasoning: "none",
+    msgs: "1 msgs",
+    time: "11:05 AM"
+  }
+];
+---
+
+<div class="message-list">
+  {messages.map(msg => (
+    <div class={`message-container ${msg.role}`}>
+      {msg.role === 'user' ? (
+        <div class="message-bubble user">
+          <div class="message-meta">
+            <span class="role-name">You</span>
+            <span class="time">{msg.time}</span>
+          </div>
+          <div class="content">{msg.content}</div>
+        </div>
+      ) : (
+        <div class="message-bubble ai">
+          <div class="ai-header">
+            <div class="model-badge">
+              <span class="ai-icon">AI</span>
+              <span class="time">{msg.time}</span>
+              <span class="model-name">{msg.model}</span>
+            </div>
+          </div>
+          
+          <div class="reasoning-bar">
+            <span class="bulb-icon">💡</span> Reasoning <span class="chevron">⌄</span>
+          </div>
+
+          <div class="content" set:html={msg.content} />
+
+          {msg.source && (
+            <div class="source-footer">
+              {msg.source}
+            </div>
+          )}
+
+          <div class="ai-actions">
+            <div class="action-group">
+              <button class="action-chip purple">
+                <span class="globe-icon">🌐</span> Web (3 results)
+              </button>
+              <button class="action-chip red">
+                <span class="image-icon">🖼️</span> Image - No results
+              </button>
+              <button class="action-chip purple-outline">
+                <span class="bulb-icon">💡</span> Reasoning: {msg.reasoning}
+              </button>
+              <button class="action-chip orange-outline">
+                <span class="msg-icon">💬</span> {msg.msgs}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
+<style>
+  .message-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .message-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .message-container.user {
+    justify-content: flex-end;
+  }
+
+  .message-container.ai {
+    justify-content: flex-start;
+  }
+
+  .message-bubble {
+    max-width: 80%;
+    padding: 1rem;
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .message-bubble.user {
+    background-color: #3b0764; /* Dark purple */
+    color: #e5e5e5;
+    border: 1px solid #581c87;
+    min-width: 120px;
+  }
+
+  .message-bubble.ai {
+    background-color: #0f0f0f;
+    border: 1px solid #262626;
+    color: #e5e5e5;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .message-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #a3a3a3;
+    margin-bottom: 0.5rem;
+  }
+
+  .ai-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .model-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #a3a3a3;
+    background-color: #262626;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+  }
+
+  .reasoning-bar {
+    background-color: #1a1033; /* Dark purple tint */
+    border: 1px solid #3b0764;
+    color: #d8b4fe;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e5e5e5;
+  }
+
+  .content :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .content :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .content :global(strong) {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .source-footer {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #a3a3a3;
+    font-style: italic;
+    border-top: 1px solid #262626;
+    padding-top: 0.5rem;
+  }
+
+  .ai-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .action-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .action-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .action-chip.purple {
+    background-color: #3b0764;
+    color: #d8b4fe;
+    border-color: #581c87;
+  }
+
+  .action-chip.red {
+    background-color: #450a0a;
+    color: #fca5a5;
+    border-color: #7f1d1d;
+  }
+
+  .action-chip.purple-outline {
+    background: transparent;
+    border: 1px solid #581c87;
+    color: #d8b4fe;
+  }
+
+  .action-chip.orange-outline {
+    background: transparent;
+    border: 1px solid #9a3412;
+    color: #fdba74;
+  }
+
+  /* Custom scrollbar */
+  .message-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .message-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .message-list::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 4px;
+  }
+</style>
