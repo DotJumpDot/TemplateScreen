@@ -1,0 +1,417 @@
+---
+const recentActivities = [
+  { id: 1, user: "Sarah Chen", action: "completed", project: "Homepage Redesign", time: "2 min ago", avatar: "SC" },
+  { id: 2, user: "Mike Johnson", action: "commented on", project: "API Integration", time: "15 min ago", avatar: "MJ" },
+  { id: 3, user: "Emma Wilson", action: "created", project: "New Project: Mobile App", time: "1 hour ago", avatar: "EW" },
+  { id: 4, user: "Alex Turner", action: "updated", project: "Database Schema", time: "2 hours ago", avatar: "AT" },
+];
+
+const upcomingTasks = [
+  { id: 1, title: "Review PR #234", priority: "high", due: "Today", assignee: "John" },
+  { id: 2, title: "Update documentation", priority: "medium", due: "Tomorrow", assignee: "Sarah" },
+  { id: 3, title: "Fix navigation bug", priority: "low", due: "This week", assignee: "Mike" },
+];
+---
+
+<section class="fresh-content">
+  <div class="content-grid">
+    <div class="main-content">
+      <div class="content-card">
+        <div class="card-header">
+          <h2>Project Progress</h2>
+          <div class="card-actions">
+            <select class="time-filter">
+              <option>This Week</option>
+              <option>This Month</option>
+              <option>This Year</option>
+            </select>
+          </div>
+        </div>
+        <div class="progress-section">
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label">Homepage Redesign</span>
+              <span class="progress-value">85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, #10b981 0%, #059669 100%)"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label">API Integration</span>
+              <span class="progress-value">62%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 62%; background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%)"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label">Mobile App Development</span>
+              <span class="progress-value">41%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 41%; background: linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%)"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label">Database Migration</span>
+              <span class="progress-value">28%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 28%; background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card chart-card">
+        <div class="card-header">
+          <h2>Activity Overview</h2>
+        </div>
+        <div class="chart-container">
+          <div class="chart-bars">
+            <div class="chart-bar-group">
+              <div class="bar-visual" style="height: 60%"></div>
+              <span class="bar-label">Mon</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="bar-visual" style="height: 80%"></div>
+              <span class="bar-label">Tue</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="bar-visual" style="height: 45%"></div>
+              <span class="bar-label">Wed</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="bar-visual" style="height: 90%"></div>
+              <span class="bar-label">Thu</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="bar-visual" style="height: 70%"></div>
+              <span class="bar-label">Fri</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="bar-visual" style="height: 35%"></div>
+              <span class="bar-label">Sat</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="bar-visual" style="height: 55%"></div>
+              <span class="bar-label">Sun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-content">
+      <div class="content-card">
+        <div class="card-header">
+          <h2>Upcoming Tasks</h2>
+          <button class="view-all-btn">View all</button>
+        </div>
+        <div class="tasks-list">
+          {upcomingTasks.map(task => (
+            <div class="task-item">
+              <div class="task-indicator" class:priority-high={task.priority === 'high'} class:priority-medium={task.priority === 'medium'} class:priority-low={task.priority === 'low'}></div>
+              <div class="task-content">
+                <div class="task-title">{task.title}</div>
+                <div class="task-meta">
+                  <span class="task-due">{task.due}</span>
+                  <span class="task-assignee">{task.assignee}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="card-header">
+          <h2>Recent Activity</h2>
+        </div>
+        <div class="activity-list">
+          {recentActivities.map(activity => (
+            <div class="activity-item">
+              <div class="activity-avatar">{activity.avatar}</div>
+              <div class="activity-details">
+                <div class="activity-text">
+                  <span class="activity-user">{activity.user}</span>
+                  <span class="activity-action">{activity.action}</span>
+                  <span class="activity-project">{activity.project}</span>
+                </div>
+                <div class="activity-time">{activity.time}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .fresh-content {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .content-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid #f1f5f9;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-header h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .card-actions select {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    cursor: pointer;
+  }
+
+  .view-all-btn {
+    background: transparent;
+    border: none;
+    color: #10b981;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .progress-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .progress-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .progress-value {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .progress-bar {
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+
+  .chart-container {
+    padding: 1rem 0;
+  }
+
+  .chart-bars {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+  }
+
+  .chart-bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .bar-visual {
+    width: 32px;
+    background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+    border-radius: 8px 8px 0 0;
+    transition: height 0.3s ease;
+  }
+
+  .bar-visual:hover {
+    opacity: 0.8;
+    transform: scaleY(1.05);
+  }
+
+  .bar-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .task-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background: #f8fafc;
+    transition: all 0.2s;
+  }
+
+  .task-item:hover {
+    background: #f1f5f9;
+  }
+
+  .task-indicator {
+    width: 4px;
+    height: 40px;
+    border-radius: 2px;
+  }
+
+  .task-indicator.priority-high {
+    background: #ef4444;
+  }
+
+  .task-indicator.priority-medium {
+    background: #f59e0b;
+  }
+
+  .task-indicator.priority-low {
+    background: #10b981;
+  }
+
+  .task-content {
+    flex: 1;
+  }
+
+  .task-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+  }
+
+  .task-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .task-due {
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+
+  .task-assignee {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .activity-avatar {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .activity-details {
+    flex: 1;
+  }
+
+  .activity-text {
+    font-size: 0.85rem;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+  }
+
+  .activity-user {
+    font-weight: 700;
+  }
+
+  .activity-action {
+    color: #64748b;
+  }
+
+  .activity-project {
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .activity-time {
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+</style>

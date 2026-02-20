@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FreshSidebar from '../components/template-nine/FreshSidebar.astro';
+import FreshHeader from '../components/template-nine/FreshHeader.astro';
+import FreshStats from '../components/template-nine/FreshStats.astro';
+import FreshContent from '../components/template-nine/FreshContent.astro';
+---
+
+<Layout title="Fresh Dashboard - Template Nine">
+  <div class="fresh-layout">
+    <FreshSidebar activePath="dashboard" />
+    <main class="fresh-main">
+      <FreshHeader />
+      <FreshStats />
+      <FreshContent />
+    </main>
+  </div>
+</Layout>
+
+<style is:global>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #f8fafc;
+    color: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+</style>
+
+<style>
+  .fresh-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .fresh-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    background: #f8fafc;
+  }
+</style>

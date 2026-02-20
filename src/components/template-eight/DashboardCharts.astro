@@ -91,18 +91,13 @@ const recentOrders = [
       </div>
     </div>
 
-    <div class="chart-card pie-chart">
+    <div class="chart-card pie-chart-card">
       <div class="card-header">
         <h3 class="card-title">Sales by Category</h3>
       </div>
 
       <div class="pie-chart-container">
-        <div class="pie-chart">
-          <div class="pie-segment segment-1"></div>
-          <div class="pie-segment segment-2"></div>
-          <div class="pie-segment segment-3"></div>
-          <div class="pie-segment segment-4"></div>
-        </div>
+        <div class="pie-chart-graphic"></div>
         <div class="pie-legend">
           <div class="legend-item">
             <div class="legend-dot blue"></div>
@@ -329,9 +324,11 @@ const recentOrders = [
     display: flex;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .pie-chart {
+  .pie-chart-graphic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -342,6 +339,7 @@ const recentOrders = [
       #ec4899 226.8deg 306deg,
       #22c55e 306deg 360deg
     );
+    flex-shrink: 0;
   }
 
   .pie-legend {

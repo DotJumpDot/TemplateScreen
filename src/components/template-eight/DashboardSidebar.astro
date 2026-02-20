@@ -34,11 +34,11 @@ const menuItems = [
       <span class="nav-label">Main Menu</span>
       <div class="nav-items">
         {menuItems.map(item => (
-          <a href={`/${item.path}`} class={`nav-item ${item.path === activePath ? 'active' : ''}`}>
+          <div class={`nav-item ${item.path === activePath ? 'active' : ''}`}>
             <span class="nav-icon">{item.icon}</span>
             <span class="nav-label-text">{item.label}</span>
             {item.badge && <span class="nav-badge">{item.badge}</span>}
-          </a>
+          </div>
         ))}
       </div>
     </div>
@@ -148,6 +148,7 @@ const menuItems = [
     color: #a3a3a3;
     transition: all 0.2s;
     position: relative;
+    cursor: pointer;
   }
 
   .nav-item:hover {
