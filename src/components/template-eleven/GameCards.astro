@@ -1,0 +1,219 @@
+---
+const games = [
+  { id: 1, name: "Mobile Legends", image: "🎯", color: "#f97316", popular: true },
+  { id: 2, name: "PUBG Mobile", image: "🔫", color: "#3b82f6", popular: true },
+  { id: 3, name: "Free Fire", image: "🔥", color: "#ef4444", popular: false },
+  { id: 4, name: "Genshin Impact", image: "⭐", color: "#8b5cf6", popular: true },
+  { id: 5, name: "Valorant", image: "🎮", color: "#ef4444", popular: false },
+  { id: 6, name: "Roblox", image: "🧱", color: "#22c55e", popular: false },
+  { id: 7, name: "Fortnite", image: "🎪", color: "#f59e0b", popular: true },
+  { id: 8, name: "League of Legends", image: "⚔️", color: "#06b6d4", popular: false },
+];
+---
+
+<section class="games-section">
+  <div class="section-header">
+    <h2 class="section-title">Popular Games</h2>
+    <a href="#" class="view-all-link">View All →</a>
+  </div>
+
+  <div class="games-grid">
+    {games.map(game => (
+      <div class="game-card" style={`--game-color: ${game.color}`}>
+        <div class="game-badge">
+          {game.popular && <span class="popular-badge">🔥 Popular</span>}
+        </div>
+        <div class="game-image-wrapper">
+          <div class="game-image" style={`background: linear-gradient(135deg, ${game.color} 0%, ${game.color}99 100%)`}>
+            <span class="game-emoji">{game.image}</span>
+          </div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-name">{game.name}</h3>
+          <div class="game-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              4.8
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              2.1M
+            </span>
+          </div>
+        </div>
+        <button class="topup-btn">Top Up</button>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .games-section {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .view-all-link {
+    color: #8b5cf6;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .view-all-link:hover {
+    color: #a78bfa;
+  }
+
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .game-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--game-color) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .game-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--game-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .game-card:hover::before {
+    opacity: 0.1;
+  }
+
+  .game-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+  }
+
+  .popular-badge {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+  }
+
+  .game-image-wrapper {
+    margin-bottom: 1.25rem;
+  }
+
+  .game-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+
+  .game-emoji {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+
+  .game-info {
+    position: relative;
+    z-index: 1;
+  }
+
+  .game-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .game-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: #a5b4fc;
+  }
+
+  .topup-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--game-color) 0%, var(--game-color)cc 100%);
+    border: none;
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .topup-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px var(--game-color);
+  }
+
+  @media (max-width: 768px) {
+    .games-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>

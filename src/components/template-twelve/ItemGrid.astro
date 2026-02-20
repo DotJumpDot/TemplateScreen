@@ -1,0 +1,246 @@
+---
+const items = [
+  { id: 1, name: "Rare Skin Pack", price: "$29", rating: 4.8, icon: "🎨", category: "Skins" },
+  { id: 2, name: "Level 99 Account", price: "$149", rating: 4.9, icon: "⭐", category: "Accounts" },
+  { id: 3, name: "Weapon ID Code", price: "$9", rating: 4.7, icon: "⚔️", category: "IDs" },
+  { id: 4, name: "VIP Pass 30 Days", price: "$19", rating: 4.9, icon: "👑", category: "Passes" },
+  { id: 5, name: "Pet Collection", price: "$15", rating: 4.6, icon: "🐾", category: "Items" },
+  { id: 6, name: "Character ID", price: "$12", rating: 4.8, icon: "👤", category: "IDs" },
+  { id: 7, name: "Bundle Pack", price: "$49", rating: 4.9, icon: "📦", category: "Bundles" },
+  { id: 8, name: "Premium Badge", price: "$5", rating: 4.5, icon: "🏅", category: "Items" },
+  { id: 9, name: "Map Unlock", price: "$8", rating: 4.7, icon: "🗺️", category: "Items" },
+];
+---
+
+<section class="items-section">
+  <div class="section-header">
+    <div class="header-left">
+      <h2 class="section-title">Shop Items</h2>
+      <p class="section-desc">Browse our collection of game items, IDs, and accounts</p>
+    </div>
+    <div class="header-right">
+      <div class="filter-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 12 22 22 17 14 12.46"/>
+        </svg>
+        <span>Filter</span>
+      </div>
+      <div class="sort-select">
+        <select>
+          <option>Sort by: Popular</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Rating</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="items-grid">
+    {items.map(item => (
+      <div class="item-card">
+        <div class="item-badge">{item.category}</div>
+        <div class="item-icon">{item.icon}</div>
+        <h3 class="item-name">{item.name}</h3>
+        <div class="item-rating">
+          <span class="stars">{'⭐'.repeat(Math.floor(item.rating))}</span>
+          <span class="rating-value">{item.rating}</span>
+        </div>
+        <div class="item-footer">
+          <span class="item-price">{item.price}</span>
+          <button class="add-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .items-section {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    gap: 2rem;
+  }
+
+  .header-left {
+    flex: 1;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  .header-right {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #818cf8;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover {
+    background: rgba(99, 102, 241, 0.3);
+  }
+
+  .sort-select select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .sort-select select option {
+    background: #1a1a2e;
+  }
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .item-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .item-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(236, 72, 153, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .item-badge {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(99, 102, 241, 0.3);
+    color: #818cf8;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+  }
+
+  .item-icon {
+    font-size: 3.5rem;
+    margin: 1.5rem 0 1rem 0;
+  }
+
+  .item-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .item-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .stars {
+    font-size: 0.9rem;
+  }
+
+  .rating-value {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .item-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ec4899;
+  }
+
+  .add-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+  }
+
+  .add-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .header-right {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .items-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+  }
+</style>

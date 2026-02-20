@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameTopupHeader from '../components/template-eleven/GameTopupHeader.astro';
+import GameTopupHero from '../components/template-eleven/GameTopupHero.astro';
+import GameCards from '../components/template-eleven/GameCards.astro';
+---
+
+<Layout title="Game Top-Up Store - Template Eleven">
+  <div class="topup-page">
+    <GameTopupHeader />
+    <GameTopupHero />
+    <GameCards />
+  </div>
+</Layout>
+
+<style is:global>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.7);
+  }
+</style>
+
+<style>
+  .topup-page {
+    min-height: 100vh;
+  }
+</style>

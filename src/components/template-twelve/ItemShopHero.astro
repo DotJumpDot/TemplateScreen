@@ -1,0 +1,254 @@
+---
+---
+
+<section class="item-shop-hero">
+  <div class="hero-pattern"></div>
+  
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="hero-tag">🎁 Premium Items</span>
+      <h1 class="hero-title">Game Items & IDs</h1>
+      <p class="hero-desc">Get rare items, game IDs, and exclusive accounts at the best prices</p>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">5K+</div>
+          <div class="stat-text">Items Sold</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.9</div>
+          <div class="stat-text">Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">⚡</div>
+          <div class="stat-text">Fast Delivery</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="featured-card">
+        <div class="featured-badge">🔥 Hot Deal</div>
+        <div class="featured-icon">👑</div>
+        <h3 class="featured-title">Premium Account</h3>
+        <p class="featured-desc">Level 100 • Rare Skins • Max Stats</p>
+        <div class="featured-price">
+          <span class="price-old">$199</span>
+          <span class="price-new">$99</span>
+        </div>
+        <button class="featured-btn">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .item-shop-hero {
+    position: relative;
+    min-height: 550px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1400px;
+    width: 100%;
+  }
+
+  .hero-left {
+    flex: 1;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(236, 72, 153, 0.2);
+    border: 1px solid rgba(236, 72, 153, 0.4);
+    color: #f472b6;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    margin: 0 0 2rem 0;
+    max-width: 500px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-text {
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
+
+  .hero-right {
+    flex: 0 0 auto;
+  }
+
+  .featured-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    border: 2px solid rgba(236, 72, 153, 0.3);
+    border-radius: 24px;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(20px);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+  }
+
+  .featured-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .featured-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .featured-desc {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .featured-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .price-old {
+    font-size: 1.25rem;
+    color: #6b7280;
+    text-decoration: line-through;
+  }
+
+  .price-new {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ec4899;
+  }
+
+  .featured-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .featured-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+  }
+
+  @media (max-width: 1024px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 3rem;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-desc {
+      text-align: center;
+    }
+
+    .featured-card {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .item-shop-hero {
+      padding: 3rem 1rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+</style>
