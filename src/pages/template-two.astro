@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PixelHeader from '../components/template-two/PixelHeader.astro';
+import PixelHero from '../components/template-two/PixelHero.astro';
+import PixelGames from '../components/template-two/PixelGames.astro';
+import PixelLeaderboard from '../components/template-two/PixelLeaderboard.astro';
+import PixelFooter from '../components/template-two/PixelFooter.astro';
+---
+
+<Layout title="Retro Game - Level Up Your Gaming Experience">
+  <main>
+    <PixelHeader />
+    <PixelHero />
+    <PixelGames />
+    <PixelLeaderboard />
+    <PixelFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Press Start 2P', cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  a {
+    color: inherit;
+  }
+</style>

@@ -1,0 +1,153 @@
+---
+interface Props {
+  features?: Array<{
+    icon: string;
+    title: string;
+    description: string;
+  }>;
+}
+
+const { 
+  features = [
+    {
+      icon: "🚀",
+      title: "Innovation First",
+      description: "Stay ahead of the curve with our cutting-edge solutions designed for the future."
+    },
+    {
+      icon: "🛡️",
+      title: "Enterprise Security",
+      description: "Bank-grade security protocols protect your valuable data around the clock."
+    },
+    {
+      icon: "📊",
+      title: "Data Analytics",
+      description: "Transform raw data into actionable insights with advanced analytics tools."
+    },
+    {
+      icon: "🤝",
+      title: "24/7 Support",
+      description: "Our dedicated team is always ready to assist you, whenever you need help."
+    },
+    {
+      icon: "⚡",
+      title: "Lightning Fast",
+      description: "Optimized performance ensures your operations run at maximum speed."
+    },
+    {
+      icon: "🌐",
+      title: "Global Scale",
+      description: "Expand your reach with infrastructure designed for worldwide deployment."
+    }
+  ]
+} = Astro.props;
+---
+
+<section id="features" class="features">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why Choose Us</h2>
+      <p class="section-subtitle">Discover the advantages that set us apart from the competition</p>
+    </div>
+    <div class="features-grid">
+      {features.map((feature, index) => (
+        <div class="feature-card" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="feature-icon">{feature.icon}</div>
+          <h3 class="feature-title">{feature.title}</h3>
+          <p class="feature-description">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 100px 2rem;
+    background: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin: 0 0 1rem 0;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: #718096;
+    margin: 0;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: #f7fafc;
+    padding: 2.5rem;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.6s ease-out both;
+    border: 2px solid transparent;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #3182ce;
+    background: white;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a365d;
+    margin: 0 0 1rem 0;
+  }
+
+  .feature-description {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

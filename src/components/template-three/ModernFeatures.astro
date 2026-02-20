@@ -1,0 +1,227 @@
+---
+interface Props {
+  features?: Array<{
+    icon: string;
+    title: string;
+    description: string;
+    gradient: string;
+  }>;
+}
+
+const { 
+  features = [
+    {
+      icon: "🤖",
+      title: "AI-Powered Automation",
+      description: "Streamline your workflows with intelligent automation that learns and adapts to your needs.",
+      gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    },
+    {
+      icon: "⚡",
+      title: "Lightning Performance",
+      description: "Experience blazing-fast speeds with our optimized infrastructure and edge computing.",
+      gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+    },
+    {
+      icon: "🔒",
+      title: "Enterprise Security",
+      description: "Bank-grade encryption and compliance with industry standards protect your data.",
+      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+    },
+    {
+      icon: "📊",
+      title: "Advanced Analytics",
+      description: "Gain deep insights with real-time analytics and customizable dashboards.",
+      gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+    },
+    {
+      icon: "🔄",
+      title: "Seamless Integration",
+      description: "Connect with your favorite tools through our extensive API and integrations.",
+      gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
+    },
+    {
+      icon: "🌍",
+      title: "Global Scalability",
+      description: "Deploy anywhere in the world with our distributed cloud infrastructure.",
+      gradient: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)"
+    }
+  ]
+} = Astro.props;
+---
+
+<section id="features" class="modern-features">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">FEATURES</span>
+      <h2 class="section-title">Everything You Need to Succeed</h2>
+      <p class="section-subtitle">Powerful features designed to accelerate your growth and maximize your potential</p>
+    </div>
+    <div class="features-grid">
+      {features.map((feature, index) => (
+        <div class="feature-card" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="feature-icon-wrapper" style={`background: ${feature.gradient}`}>
+            <span class="feature-icon">{feature.icon}</span>
+          </div>
+          <h3 class="feature-title">{feature.title}</h3>
+          <p class="feature-description">{feature.description}</p>
+          <a href="#" class="feature-link">Learn more →</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .modern-features {
+    padding: 120px 2rem;
+    background: #0a0a14;
+    position: relative;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 1.5rem 0;
+    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.6s ease-out both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .feature-card:hover::before {
+    opacity: 1;
+  }
+
+  .feature-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 1rem 0;
+  }
+
+  .feature-description {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+  }
+
+  .feature-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-link:hover {
+    color: #764ba2;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+      padding: 2rem;
+    }
+  }
+</style>

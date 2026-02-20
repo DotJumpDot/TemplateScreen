@@ -1,0 +1,513 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Template Screen - Landing Page Templates">
+  <main class="catalog">
+    <header class="catalog-header">
+      <h1 class="catalog-title">Template Screen</h1>
+      <p class="catalog-subtitle">A collection of high-quality landing page templates to demonstrate various styles to customers</p>
+    </header>
+
+    <section class="templates-grid">
+      <a href="/template-one" class="template-card corporate">
+        <div class="card-preview">
+          <div class="preview-header">
+            <div class="preview-logo">◆</div>
+            <div class="preview-nav">
+              <span class="preview-line"></span>
+              <span class="preview-line"></span>
+              <span class="preview-line"></span>
+            </div>
+          </div>
+          <div class="preview-content">
+            <div class="preview-title-line"></div>
+            <div class="preview-text-line"></div>
+            <div class="preview-button"></div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">Corporate / Professional</h2>
+          <p class="card-description">Clean, trustworthy, ready-to-implement business style with smooth animations</p>
+          <span class="card-tag">Business</span>
+        </div>
+      </a>
+
+      <a href="/template-two" class="template-card retro">
+        <div class="card-preview">
+          <div class="preview-header retro-header">
+            <div class="preview-logo retro-logo">▶</div>
+            <div class="preview-nav retro-nav">
+              <span class="pixel-line"></span>
+              <span class="pixel-line"></span>
+              <span class="pixel-line"></span>
+            </div>
+          </div>
+          <div class="preview-content retro-content">
+            <div class="pixel-title">LEVEL UP</div>
+            <div class="pixel-characters">
+              <span>◉</span>
+              <span>◈</span>
+              <span>◆</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">Retro Game Theme</h2>
+          <p class="card-description">Pixel art and 8-bit aesthetic with nostalgic gaming vibes</p>
+          <span class="card-tag retro-tag">Gaming</span>
+        </div>
+      </a>
+
+      <a href="/template-three" class="template-card modern">
+        <div class="card-preview">
+          <div class="preview-header modern-header">
+            <div class="preview-logo modern-logo">NEXUS</div>
+            <div class="preview-nav modern-nav">
+              <span class="modern-line"></span>
+              <span class="modern-line"></span>
+              <span class="modern-line"></span>
+            </div>
+          </div>
+          <div class="preview-content modern-content">
+            <div class="gradient-orb"></div>
+            <div class="modern-title">Build the Future</div>
+            <div class="modern-button"></div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">Modern SaaS / Creative</h2>
+          <p class="card-description">Sleek, dark mode with vibrant gradients and modern UI elements</p>
+          <span class="card-tag modern-tag">SaaS</span>
+        </div>
+      </a>
+    </section>
+
+    <section class="tech-info">
+      <h3 class="tech-title">Technology Stack</h3>
+      <div class="tech-items">
+        <div class="tech-item">
+          <span class="tech-icon">⚡</span>
+          <span>Astro 5</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🥟</span>
+          <span>Bun</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🎨</span>
+          <span>CSS-in-JS</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">📱</span>
+          <span>Responsive</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const cards = document.querySelectorAll('.template-card');
+        cards.forEach(card => {
+          card.classList.add('visible');
+        });
+      }, 100);
+    });
+  </script>
+</Layout>
+
+<style>
+  .catalog {
+    min-height: 100vh;
+    padding: 80px 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .catalog-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInDown 0.8s ease-out;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .catalog-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .catalog-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto 4rem;
+  }
+
+  .template-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .template-card.retro {
+    background: #16213e;
+  }
+
+  .template-card.modern {
+    background: #0a0a14;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .template-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .template-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .template-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .template-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .template-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .template-card:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .template-card:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .template-card:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .templates-grid:hover .template-card,
+  .template-card:nth-child(1):hover,
+  .template-card:nth-child(2):hover,
+  .template-card:nth-child(3):hover {
+    transition-delay: 0s;
+  }
+
+  .card-preview {
+    height: 200px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .template-card.corporate .card-preview {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  }
+
+  .template-card.retro .card-preview {
+    background: #16213e;
+  }
+
+  .template-card.modern .card-preview {
+    background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+  }
+
+  .preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .preview-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3182ce;
+  }
+
+  .retro-logo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #f39c12;
+  }
+
+  .modern-logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .preview-nav {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .preview-line {
+    width: 30px;
+    height: 4px;
+    background: #cbd5e0;
+    border-radius: 2px;
+  }
+
+  .pixel-line {
+    width: 20px;
+    height: 6px;
+    background: #f39c12;
+  }
+
+  .modern-line {
+    width: 25px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+
+  .preview-content {
+    padding-top: 1rem;
+  }
+
+  .preview-title-line {
+    width: 60%;
+    height: 16px;
+    background: #2d3748;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+
+  .preview-text-line {
+    width: 80%;
+    height: 10px;
+    background: #a0aec0;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .preview-button {
+    width: 120px;
+    height: 36px;
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%);
+    border-radius: 8px;
+  }
+
+  .retro-content {
+    text-align: center;
+  }
+
+  .pixel-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: #f39c12;
+    margin-bottom: 1rem;
+  }
+
+  .pixel-characters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem;
+  }
+
+  .pixel-characters span:nth-child(1) { color: #3498db; }
+  .pixel-characters span:nth-child(2) { color: #e74c3c; }
+  .pixel-characters span:nth-child(3) { color: #2ecc71; }
+
+  .modern-content {
+    position: relative;
+    text-align: center;
+  }
+
+  .gradient-orb {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+    border-radius: 50%;
+    filter: blur(40px);
+  }
+
+  .modern-title {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .modern-button {
+    position: relative;
+    width: 100px;
+    height: 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+
+  .card-info {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .template-card.retro .card-title,
+  .template-card.modern .card-title {
+    color: white;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+  }
+
+  .template-card.retro .card-description,
+  .template-card.modern .card-description {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .card-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #3182ce;
+    color: white;
+  }
+
+  .retro-tag {
+    background: #e74c3c;
+  }
+
+  .modern-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .tech-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out 0.5s both;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .tech-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 2rem 0;
+  }
+
+  .tech-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .tech-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+  }
+
+  .tech-icon {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 768px) {
+    .catalog-title {
+      font-size: 2.5rem;
+    }
+
+    .templates-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-items {
+      gap: 1rem;
+    }
+
+    .tech-item {
+      font-size: 0.9rem;
+      padding: 0.8rem 1.2rem;
+    }
+  }
+</style>

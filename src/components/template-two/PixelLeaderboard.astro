@@ -1,0 +1,181 @@
+---
+interface Props {
+  scores?: Array<{
+    rank: number;
+    name: string;
+    score: string;
+    game: string;
+  }>;
+}
+
+const { 
+  scores = [
+    { rank: 1, name: "PLAYER_ONE", score: "999,999", game: "SPACE INVADERS" },
+    { rank: 2, name: "RETRO_MASTER", score: "888,888", game: "TETRIS" },
+    { rank: 3, name: "PIXEL_KING", score: "777,777", game: "PAC-MAN" },
+    { rank: 4, name: "GAME_LORD", score: "666,666", game: "MARIO BROS" },
+    { rank: 5, name: "ARCADE_PRO", score: "555,555", game: "ZELDA" }
+  ]
+} = Astro.props;
+---
+
+<section id="scores" class="pixel-leaderboard">
+  <div class="pixel-container">
+    <h2 class="pixel-section-title">HIGH SCORES</h2>
+    <div class="leaderboard">
+      <div class="leaderboard-header">
+        <span>RANK</span>
+        <span>PLAYER</span>
+        <span>GAME</span>
+        <span>SCORE</span>
+      </div>
+      {scores.map((score, index) => (
+        <div class="score-row" style={`animation-delay: ${index * 0.1}s`}>
+          <span class="rank rank-{score.rank}">{score.rank}</span>
+          <span class="player">{score.name}</span>
+          <span class="game">{score.game}</span>
+          <span class="score">{score.score}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pixel-leaderboard {
+    padding: 100px 2rem;
+    background: #1a1a2e;
+    position: relative;
+  }
+
+  .pixel-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .pixel-section-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: #f39c12;
+    text-shadow: 3px 3px 0 #000;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .leaderboard {
+    background: #16213e;
+    border: 4px solid #e74c3c;
+    box-shadow: 6px 6px 0 #000;
+    overflow: hidden;
+  }
+
+  .leaderboard-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 150px;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f39c12;
+    border-bottom: 4px solid #e74c3c;
+  }
+
+  .leaderboard-header span {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    color: #000;
+    text-align: center;
+  }
+
+  .score-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 150px;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 2px solid #0f3460;
+    align-items: center;
+    transition: all 0.2s steps(2);
+    animation: slideIn 0.4s steps(10) both;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .score-row:hover {
+    background: #0f3460;
+    transform: translateX(5px);
+  }
+
+  .rank {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    color: #f39c12;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .rank-1 {
+    color: #f1c40f;
+    font-size: 1.1rem;
+    animation: gold 0.5s infinite alternate;
+  }
+
+  @keyframes gold {
+    from { text-shadow: 0 0 5px #f1c40f; }
+    to { text-shadow: 0 0 15px #f1c40f; }
+  }
+
+  .rank-2 {
+    color: #95a5a6;
+  }
+
+  .rank-3 {
+    color: #cd7f32;
+  }
+
+  .player {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    color: #fff;
+    text-align: left;
+    text-shadow: 1px 1px 0 #000;
+  }
+
+  .game {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    color: #3498db;
+    text-align: left;
+  }
+
+  .score {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #2ecc71;
+    text-align: right;
+    text-shadow: 1px 1px 0 #000;
+  }
+
+  @media (max-width: 768px) {
+    .leaderboard-header,
+    .score-row {
+      grid-template-columns: 50px 1fr 100px;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+
+    .game {
+      display: none;
+    }
+
+    .leaderboard-header span:nth-child(3) {
+      display: none;
+    }
+  }
+</style>

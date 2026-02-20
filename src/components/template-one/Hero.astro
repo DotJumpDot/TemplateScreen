@@ -1,0 +1,221 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+}
+
+const { 
+  title = "Transform Your Business with Innovation", 
+  subtitle = "Empowering organizations to achieve excellence through cutting-edge solutions and strategic partnerships.",
+  ctaText = "Start Your Journey"
+} = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">{title}</h1>
+      <p class="hero-subtitle">{subtitle}</p>
+      <div class="hero-actions">
+        <button class="primary-cta">{ctaText}</button>
+        <button class="secondary-cta">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-cards">
+        <div class="card card-1"></div>
+        <div class="card card-2"></div>
+        <div class="card card-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 2rem 80px;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(49, 130, 206, 0.1) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-text {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1a365d;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .primary-cta {
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+
+  .primary-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(49, 130, 206, 0.4);
+  }
+
+  .secondary-cta {
+    background: transparent;
+    color: #3182ce;
+    border: 2px solid #3182ce;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 0.3s both;
+  }
+
+  .secondary-cta:hover {
+    background: #3182ce;
+    color: white;
+  }
+
+  .hero-visual {
+    position: relative;
+    animation: fadeInRight 1s ease-out 0.4s both;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .floating-cards {
+    position: relative;
+    height: 400px;
+  }
+
+  .card {
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-1 {
+    width: 280px;
+    height: 180px;
+    top: 50px;
+    left: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .card-2 {
+    width: 240px;
+    height: 160px;
+    top: 150px;
+    right: 0;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  .card-3 {
+    width: 200px;
+    height: 140px;
+    top: 280px;
+    left: 80px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    animation: float 6s ease-in-out infinite 4s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+
+  @media (max-width: 968px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+  }
+</style>

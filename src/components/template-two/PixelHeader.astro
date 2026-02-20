@@ -1,0 +1,108 @@
+---
+---
+
+<header class="pixel-header">
+  <nav class="pixel-nav">
+    <div class="pixel-logo">
+      <span class="pixel-text">▶ RETRO GAME</span>
+    </div>
+    <ul class="pixel-links">
+      <li><a href="#games">GAMES</a></li>
+      <li><a href="#characters">CHARACTERS</a></li>
+      <li><a href="#scores">SCORES</a></li>
+      <li><a href="#about">ABOUT</a></li>
+    </ul>
+    <button class="pixel-btn">PLAY NOW</button>
+  </nav>
+</header>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  .pixel-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a2e;
+    border-bottom: 4px solid #f39c12;
+    z-index: 1000;
+    animation: slideDown 0.5s steps(10) both;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .pixel-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pixel-logo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: #f39c12;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .pixel-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pixel-links a {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s steps(2);
+    text-shadow: 1px 1px 0 #000;
+  }
+
+  .pixel-links a:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+  }
+
+  .pixel-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    background: #e74c3c;
+    color: #fff;
+    border: 4px solid #c0392b;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000;
+    transition: all 0.2s steps(2);
+    text-shadow: 1px 1px 0 #000;
+  }
+
+  .pixel-btn:hover {
+    background: #c0392b;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  @media (max-width: 768px) {
+    .pixel-links {
+      display: none;
+    }
+
+    .pixel-nav {
+      padding: 1rem;
+    }
+  }
+</style>
