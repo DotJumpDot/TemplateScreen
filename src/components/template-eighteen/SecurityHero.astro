@@ -1,0 +1,389 @@
+---
+---
+
+<section class="security-hero">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="status-badge">
+        <span class="pulse-dot"></span>
+        System Secure
+      </div>
+      
+      <h1 class="hero-title">
+        Next-Gen <span class="gradient-text">Cyber Defense</span> for the Modern Web
+      </h1>
+      
+      <p class="hero-description">
+        Protect your digital assets with enterprise-grade security powered by advanced AI threat detection. Real-time monitoring, zero-day protection, and seamless integration.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="#get-started" class="primary-btn">
+          <span>Start Free Trial</span>
+          <div class="btn-glow"></div>
+        </a>
+        <a href="#demo" class="secondary-btn">
+          <span class="play-icon">▶</span>
+          Watch Demo
+        </a>
+      </div>
+
+      <div class="tech-stack">
+        <span>Trusted by:</span>
+        <div class="logos">
+          <span class="logo-text">NETFLIX</span>
+          <span class="logo-text">UBER</span>
+          <span class="logo-text">GOOGLE</span>
+          <span class="logo-text">STRIPE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="shield-container">
+        <div class="shield-ring ring-1"></div>
+        <div class="shield-ring ring-2"></div>
+        <div class="shield-ring ring-3"></div>
+        <div class="shield-core">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7V12C3 17.52 6.84 22.74 12 24C17.16 22.74 21 17.52 21 12V7L12 2ZM12 21.93C8.24 20.78 5.23 16.91 5.03 12.06H18.97C18.77 16.91 15.76 20.78 12 21.93Z" fill="url(#paint0_linear)"/>
+            <defs>
+              <linearGradient id="paint0_linear" x1="12" y1="2" x2="12" y2="24" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00F3FF"/>
+                <stop offset="1" stop-color="#0066FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="floating-badge badge-1">
+          <span class="icon">🔒</span>
+          <span class="text">Encrypted</span>
+        </div>
+        <div class="floating-badge badge-2">
+          <span class="icon">⚡</span>
+          <span class="text">Real-time</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .security-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2rem 4rem;
+    background: #0a0f1c;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+  }
+
+  .orb-1 {
+    top: -10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #0066ff 0%, transparent 70%);
+    animation: float 10s infinite ease-in-out;
+  }
+
+  .orb-2 {
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #00f3ff 0%, transparent 70%);
+    animation: float 15s infinite ease-in-out reverse;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-content {
+    color: #fff;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #00f3ff;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(4px);
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #00f3ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00f3ff;
+    animation: pulse 2s infinite;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #fff 0%, #00f3ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .primary-btn {
+    position: relative;
+    padding: 1rem 2.5rem;
+    background: #00f3ff;
+    color: #0a0f1c;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+  }
+
+  .primary-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    animation: shine 3s infinite;
+  }
+
+  .secondary-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .secondary-btn:hover {
+    opacity: 0.8;
+  }
+
+  .play-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    padding-left: 2px;
+  }
+
+  .tech-stack {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .logos {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .logo-text {
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-visual {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shield-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shield-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.05);
+  }
+
+  .ring-1 {
+    width: 100%;
+    height: 100%;
+    animation: spin 20s linear infinite;
+    border-top-color: #00f3ff;
+    border-bottom-color: #00f3ff;
+  }
+
+  .ring-2 {
+    width: 70%;
+    height: 70%;
+    animation: spin 15s linear infinite reverse;
+    border-left-color: #0066ff;
+    border-right-color: #0066ff;
+  }
+
+  .ring-3 {
+    width: 120%;
+    height: 120%;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    animation: spin 30s linear infinite;
+  }
+
+  .shield-core {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 0 30px #00f3ff);
+    animation: float 6s infinite ease-in-out;
+  }
+
+  .floating-badge {
+    position: absolute;
+    padding: 0.75rem 1.25rem;
+    background: rgba(10, 15, 28, 0.8);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .badge-1 {
+    top: 20%;
+    right: 0;
+    animation: float 8s infinite ease-in-out 1s;
+  }
+
+  .badge-2 {
+    bottom: 20%;
+    left: 0;
+    animation: float 8s infinite ease-in-out 2s;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-title { font-size: 3rem; }
+    .container { gap: 2rem; }
+  }
+
+  @media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; text-align: center; }
+    .hero-actions { justify-content: center; }
+    .status-badge { margin: 0 auto 2rem; }
+    .hero-visual { height: 400px; }
+    .shield-container { width: 300px; height: 300px; }
+    .tech-stack { justify-content: center; }
+  }
+</style>

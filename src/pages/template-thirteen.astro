@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PhotoHeader from '../components/template-thirteen/PhotoHeader.astro';
+import PhotoHero from '../components/template-thirteen/PhotoHero.astro';
+import PhotoGallery from '../components/template-thirteen/PhotoGallery.astro';
+import PhotoServices from '../components/template-thirteen/PhotoServices.astro';
+import PhotoContact from '../components/template-thirteen/PhotoContact.astro';
+import PhotoFooter from '../components/template-thirteen/PhotoFooter.astro';
+---
+
+<Layout title="LENS - Professional Photography Portfolio">
+  <main>
+    <PhotoHeader />
+    <PhotoHero />
+    <PhotoGallery />
+    <PhotoServices />
+    <PhotoContact />
+    <PhotoFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: #000;
+  }
+
+  button {
+    font-family: inherit;
+  }
+</style>

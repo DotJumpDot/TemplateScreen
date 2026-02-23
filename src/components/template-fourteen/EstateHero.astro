@@ -1,0 +1,246 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+}
+
+const { 
+  title = "Exceptional Living", 
+  subtitle = "Discover exclusive properties in the world's most prestigious locations.",
+  ctaText = "Explore Properties"
+} = Astro.props;
+---
+
+<section class="estate-hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>✦ PREMIUM REAL ESTATE</span>
+    </div>
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <div class="hero-cta">
+      <button class="primary-button">{ctaText}</button>
+      <button class="secondary-button">Virtual Tour</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Properties</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">25yr</div>
+        <div class="stat-label">Experience</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<style>
+  .estate-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #121212 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 3rem 80px;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  }
+
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 0.6rem 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-badge span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #d4af37;
+  }
+
+  .hero-title {
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #fff;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.02em;
+    animation: fadeInUp 0.8s ease-out 0.15s both;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 3rem 0;
+    font-weight: 300;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 5rem;
+    animation: fadeInUp 0.8s ease-out 0.45s both;
+  }
+
+  .primary-button {
+    background: linear-gradient(135deg, #d4af37 0%, #b8960c 100%);
+    color: #121212;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+  }
+
+  .secondary-button {
+    background: transparent;
+    color: #d4af37;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 1.25rem 2.5rem;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .secondary-button:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: #d4af37;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(212, 175, 55, 0.2);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-15px); }
+    60% { transform: translateX(-50%) translateY(-7px); }
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, #d4af37, transparent);
+  }
+
+  @media (max-width: 1024px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .stat-divider {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .estate-hero {
+      padding: 120px 1.5rem 80px;
+    }
+  }
+</style>

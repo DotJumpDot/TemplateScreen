@@ -1,0 +1,155 @@
+---
+const services = [
+  {
+    icon: "🏠",
+    title: "Property Sales",
+    description: "Expert guidance through every step of buying and selling luxury properties."
+  },
+  {
+    icon: "🔍",
+    title: "Property Management",
+    description: "Comprehensive management services for your real estate investments."
+  },
+  {
+    icon: "📊",
+    title: "Market Analysis",
+    description: "In-depth market insights and valuation services for informed decisions."
+  },
+  {
+    icon: "🎯",
+    title: "Investment Advisory",
+    description: "Strategic investment consulting to maximize your real estate portfolio."
+  }
+];
+---
+
+<section class="estate-services" id="services">
+  <div class="services-header">
+    <h2 class="services-title">Our Services</h2>
+    <p class="services-subtitle">Comprehensive real estate solutions tailored to your needs</p>
+  </div>
+  <div class="services-grid">
+    {services.map((service, index) => (
+      <div class="service-card" style={`animation-delay: ${index * 0.15}s`}>
+        <div class="service-icon">{service.icon}</div>
+        <h3 class="service-title">{service.title}</h3>
+        <p class="service-description">{service.description}</p>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .estate-services {
+    padding: 100px 3rem;
+    background: #121212;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .services-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem 0;
+  }
+
+  .services-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 30px 80px rgba(212, 175, 55, 0.1);
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 1rem 0;
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin: 0 0 1.5rem 0;
+    font-weight: 300;
+  }
+
+  .service-link {
+    display: inline-block;
+    color: #d4af37;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .service-link:hover {
+    border-color: #d4af37;
+  }
+
+  @media (max-width: 1024px) {
+    .estate-services {
+      padding: 80px 2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

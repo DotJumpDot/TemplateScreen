@@ -1,0 +1,190 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+}
+
+const { 
+  title = "Capturing Moments", 
+  subtitle = "Professional photography that tells your unique story with elegance and timeless beauty.",
+  ctaText = "View Portfolio"
+} = Astro.props;
+---
+
+<section class="photo-hero">
+  <div class="hero-content">
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <div class="hero-cta">
+      <button class="primary-button">{ctaText}</button>
+      <button class="secondary-button">Get in Touch</button>
+    </div>
+  </div>
+  <div class="hero-images">
+    <div class="image-frame frame-1"></div>
+    <div class="image-frame frame-2"></div>
+    <div class="image-frame frame-3"></div>
+  </div>
+</section>
+
+<style>
+  .photo-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fafafa;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 4rem 80px 6rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+    font-weight: 200;
+    line-height: 1.1;
+    color: #000;
+    margin: 0 0 2rem 0;
+    letter-spacing: -0.02em;
+    animation: fadeInUp 1.2s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    margin: 0 0 3rem 0;
+    max-width: 450px;
+    font-weight: 300;
+    animation: fadeInUp 1.2s ease-out 0.2s both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    animation: fadeInUp 1.2s ease-out 0.4s both;
+  }
+
+  .primary-button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .primary-button:hover {
+    background: #333;
+    transform: translateX(5px);
+  }
+
+  .secondary-button {
+    background: transparent;
+    color: #000;
+    border: 1px solid #000;
+    padding: 1.2rem 2.5rem;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .secondary-button:hover {
+    background: #000;
+    color: #fff;
+    transform: translateX(5px);
+  }
+
+  .hero-images {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-frame {
+    position: absolute;
+    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  }
+
+  .frame-1 {
+    width: 350px;
+    height: 450px;
+    top: 15%;
+    right: 10%;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .frame-2 {
+    width: 280px;
+    height: 350px;
+    top: 40%;
+    right: 30%;
+    animation: float 8s ease-in-out infinite 2.5s;
+  }
+
+  .frame-3 {
+    width: 220px;
+    height: 280px;
+    top: 20%;
+    right: 35%;
+    animation: float 8s ease-in-out infinite 5s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(1deg); }
+  }
+
+  @media (max-width: 1024px) {
+    .photo-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+      padding: 120px 2rem 80px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .hero-subtitle {
+      max-width: 100%;
+    }
+
+    .hero-cta {
+      justify-content: center;
+    }
+
+    .hero-images {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,156 @@
+---
+const services = [
+  {
+    icon: "📷",
+    title: "Portrait Photography",
+    description: "Capturing the essence of individuals with artistic precision and natural lighting."
+  },
+  {
+    icon: "🏛️",
+    title: "Architecture",
+    description: "Showcasing the beauty and design of built environments through unique perspectives."
+  },
+  {
+    icon: "🌄",
+    title: "Landscape",
+    description: "Documenting the natural world with breathtaking detail and atmospheric depth."
+  },
+  {
+    icon: "🎭",
+    title: "Events",
+    description: "Preserving precious moments from special occasions with documentary style."
+  }
+];
+---
+
+<section class="photo-services" id="services">
+  <div class="services-header">
+    <h2 class="services-title">Services</h2>
+    <p class="services-subtitle">Professional photography tailored to your vision</p>
+  </div>
+  <div class="services-grid">
+    {services.map((service, index) => (
+      <div class="service-card" style={`animation-delay: ${index * 0.15}s`}>
+        <div class="service-icon">{service.icon}</div>
+        <h3 class="service-title">{service.title}</h3>
+        <p class="service-description">{service.description}</p>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .photo-services {
+    padding: 100px 6rem;
+    background: #fafafa;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .services-title {
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: #000;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem 0;
+  }
+
+  .services-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border-color: transparent;
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0 0 1rem 0;
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+    margin: 0 0 1.5rem 0;
+    font-weight: 300;
+  }
+
+  .service-link {
+    display: inline-block;
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .service-link:hover {
+    color: #666;
+    border-color: #666;
+  }
+
+  @media (max-width: 1024px) {
+    .photo-services {
+      padding: 80px 2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

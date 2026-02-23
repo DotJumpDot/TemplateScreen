@@ -1,0 +1,202 @@
+---
+const treatments = [
+  {
+    icon: "🌸",
+    title: "Aromatherapy Massage",
+    duration: "60 min",
+    price: "$120",
+    description: "Relaxing massage using essential oils to calm mind and body"
+  },
+  {
+    icon: "💎",
+    title: "Crystal Healing",
+    duration: "90 min",
+    price: "$180",
+    description: "Ancient healing practice using crystals to restore energy balance"
+  },
+  {
+    icon: "🧘",
+    title: "Yoga & Meditation",
+    duration: "75 min",
+    price: "$95",
+    description: "Guided session combining gentle yoga with mindfulness meditation"
+  },
+  {
+    icon: "🌿",
+    title: "Herbal Body Wrap",
+    duration: "90 min",
+    price: "$165",
+    description: "Detoxifying treatment with natural herbs and warm oils"
+  }
+];
+---
+
+<section class="spa-treatments" id="treatments">
+  <div class="treatments-header">
+    <h2 class="treatments-title">Our Treatments</h2>
+    <p class="treatments-subtitle">Curated wellness experiences for body, mind, and soul</p>
+  </div>
+  <div class="treatments-grid">
+    {treatments.map((treatment, index) => (
+      <div class="treatment-card" style={`animation-delay: ${index * 0.15}s`}>
+        <div class="treatment-icon">{treatment.icon}</div>
+        <div class="treatment-info">
+          <h3 class="treatment-title">{treatment.title}</h3>
+          <div class="treatment-meta">
+            <span class="meta-item">
+              <span class="meta-icon">⏱️</span>
+              {treatment.duration}
+            </span>
+            <span class="meta-item">
+              <span class="meta-icon">💰</span>
+              {treatment.price}
+            </span>
+          </div>
+          <p class="treatment-description">{treatment.description}</p>
+        </div>
+        <button class="book-treatment">Book Now</button>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .spa-treatments {
+    padding: 100px 3rem;
+    background: #fff;
+  }
+
+  .treatments-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .treatments-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #1e3a32;
+    margin: 0 0 1rem 0;
+  }
+
+  .treatments-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .treatment-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    border: 1px solid rgba(90, 143, 126, 0.15);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .treatment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(90, 143, 126, 0.15);
+    border-color: rgba(90, 143, 126, 0.3);
+  }
+
+  .treatment-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .treatment-info {
+    margin-bottom: 2rem;
+  }
+
+  .treatment-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #1e3a32;
+    margin: 0 0 1rem 0;
+  }
+
+  .treatment-meta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+  }
+
+  .meta-icon {
+    font-size: 0.9rem;
+  }
+
+  .treatment-description {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .book-treatment {
+    width: 100%;
+    background: linear-gradient(135deg, #5a8f7e 0%, #7bb3a3 100%);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+  }
+
+  .book-treatment:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(90, 143, 126, 0.3);
+  }
+
+  @media (max-width: 1024px) {
+    .spa-treatments {
+      padding: 80px 2rem;
+    }
+
+    .treatments-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .treatments-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

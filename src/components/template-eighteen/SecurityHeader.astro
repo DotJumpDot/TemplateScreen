@@ -1,0 +1,214 @@
+---
+---
+
+<header class="security-header">
+  <div class="container">
+    <a href="#" class="brand">
+      <div class="logo-icon">
+        <div class="shield"></div>
+        <div class="check"></div>
+      </div>
+      <span class="brand-name">CYBER<span class="highlight">GUARD</span></span>
+    </a>
+
+    <nav class="nav-menu">
+      <a href="#solutions" class="nav-link">Solutions</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#about" class="nav-link">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#" class="login-btn">Log In</a>
+      <a href="#" class="cta-btn">Get Protected</a>
+    </div>
+
+    <button class="mobile-menu-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .security-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 15, 28, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+    padding: 1.25rem 0;
+    transition: all 0.3s ease;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shield {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #00f3ff, #0066ff);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    opacity: 0.2;
+    animation: pulse 2s infinite;
+  }
+
+  .logo-icon::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: 2px solid #00f3ff;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  }
+
+  .check {
+    width: 8px;
+    height: 14px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg) translate(-2px, -2px);
+  }
+
+  .brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+
+  .highlight {
+    color: #00f3ff;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00f3ff;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px #00f3ff;
+  }
+
+  .nav-link:hover {
+    color: #fff;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .login-btn {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .login-btn:hover {
+    opacity: 0.8;
+  }
+
+  .cta-btn {
+    background: linear-gradient(90deg, #00f3ff, #0066ff);
+    color: #0a0f1c;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.1); opacity: 0.4; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu, .header-actions {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+  }
+</style>

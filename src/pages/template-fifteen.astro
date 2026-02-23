@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SpaHeader from '../components/template-fifteen/SpaHeader.astro';
+import SpaHero from '../components/template-fifteen/SpaHero.astro';
+import SpaTreatments from '../components/template-fifteen/SpaTreatments.astro';
+import SpaFacilities from '../components/template-fifteen/SpaFacilities.astro';
+import SpaBooking from '../components/template-fifteen/SpaBooking.astro';
+import SpaFooter from '../components/template-fifteen/SpaFooter.astro';
+---
+
+<Layout title="SERENITY - Wellness & Spa">
+  <main>
+    <SpaHeader />
+    <SpaHero />
+    <SpaTreatments />
+    <SpaFacilities />
+    <SpaBooking />
+    <SpaFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1e3a32;
+  }
+
+  button {
+    font-family: inherit;
+  }
+</style>

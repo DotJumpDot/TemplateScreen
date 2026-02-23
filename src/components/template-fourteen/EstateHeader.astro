@@ -1,0 +1,131 @@
+---
+const logo = "LUXE";
+
+const navItems = [
+  { name: "Properties", href: "#properties" },
+  { name: "Locations", href: "#locations" },
+  { name: "Services", href: "#services" },
+  { name: "Contact", href: "#contact" }
+];
+---
+
+<header class="estate-header">
+  <div class="header-container">
+    <a href="#" class="logo">{logo}</a>
+    <nav class="nav-menu">
+      {navItems.map(item => (
+        <a href={item.href} class="nav-link">{item.name}</a>
+      ))}
+    </nav>
+    <button class="contact-btn">Book Viewing</button>
+  </div>
+</header>
+
+<style>
+  .estate-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.95) 0%, rgba(18, 18, 18, 0.85) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    animation: slideDown 0.8s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .logo:hover {
+    color: #fff;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #d4af37;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #d4af37;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .contact-btn {
+    background: transparent;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .contact-btn:hover {
+    background: #d4af37;
+    color: #121212;
+  }
+
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-menu {
+      display: none;
+    }
+  }
+</style>

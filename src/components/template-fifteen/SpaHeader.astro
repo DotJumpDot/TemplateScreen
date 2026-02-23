@@ -1,0 +1,132 @@
+---
+const logo = "SERENITY";
+
+const navItems = [
+  { name: "Treatments", href: "#treatments" },
+  { name: "Facilities", href: "#facilities" },
+  { name: "Packages", href: "#packages" },
+  { name: "Book", href: "#book" }
+];
+---
+
+<header class="spa-header">
+  <div class="header-container">
+    <a href="#" class="logo">{logo}</a>
+    <nav class="nav-menu">
+      {navItems.map(item => (
+        <a href={item.href} class="nav-link">{item.name}</a>
+      ))}
+    </nav>
+    <button class="book-btn">Book Now</button>
+  </div>
+</header>
+
+<style>
+  .spa-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    animation: slideDown 0.8s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: #5a8f7e;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .logo:hover {
+    color: #3d7a6a;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #5a8f7e, #7bb3a3);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #5a8f7e;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .book-btn {
+    background: linear-gradient(135deg, #5a8f7e 0%, #7bb3a3 100%);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+  }
+
+  .book-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(90, 143, 126, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-menu {
+      display: none;
+    }
+  }
+</style>

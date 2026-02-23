@@ -1,0 +1,275 @@
+---
+const plans = [
+  {
+    name: "Starter",
+    price: "29",
+    period: "month",
+    features: [
+      "Up to 5 projects",
+      "10GB storage",
+      "Basic analytics",
+      "Email support",
+      "Community access"
+    ],
+    popular: false
+  },
+  {
+    name: "Pro",
+    price: "79",
+    period: "month",
+    features: [
+      "Unlimited projects",
+      "100GB storage",
+      "Advanced analytics",
+      "Priority support",
+      "API access",
+      "Custom integrations"
+    ],
+    popular: true
+  },
+  {
+    name: "Enterprise",
+    price: "199",
+    period: "month",
+    features: [
+      "Everything in Pro",
+      "Unlimited storage",
+      "Dedicated support",
+      "SLA guarantee",
+      "Custom development",
+      "White labeling"
+    ],
+    popular: false
+  }
+];
+---
+
+<section class="startup-pricing" id="pricing">
+  <div class="pricing-header">
+    <h2 class="pricing-title">Simple, Transparent Pricing</h2>
+    <p class="pricing-subtitle">Choose the perfect plan for your needs. Cancel anytime.</p>
+  </div>
+  <div class="pricing-grid">
+    {plans.map((plan, index) => (
+      <div class={`pricing-card ${plan.popular ? 'popular' : ''}`} style={`animation-delay: ${index * 0.15}s`}>
+        {plan.popular && <div class="popular-badge">Most Popular</div>}
+        <div class="plan-name">{plan.name}</div>
+        <div class="plan-price">
+          <span class="currency">$</span>
+          <span class="amount">{plan.price}</span>
+          <span class="period">/{plan.period}</span>
+        </div>
+        <ul class="plan-features">
+          {plan.features.map(feature => (
+            <li class="feature-item">
+              <span class="check-icon">✓</span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+        <button class={`plan-button ${plan.popular ? 'primary' : 'secondary'}`}>
+          {plan.popular ? 'Get Started' : 'Start Free Trial'}
+        </button>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .startup-pricing {
+    padding: 100px 3rem;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+  }
+
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .pricing-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem 0;
+  }
+
+  .pricing-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .pricing-card.popular {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(167, 139, 250, 0.05) 100%);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .pricing-card.popular:hover {
+    box-shadow: 0 30px 80px rgba(139, 92, 246, 0.15);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .plan-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .amount {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .period {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+  }
+
+  .check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .plan-button {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .plan-button.primary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+    color: #fff;
+    border: none;
+  }
+
+  .plan-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+  }
+
+  .plan-button.secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .plan-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 1024px) {
+    .startup-pricing {
+      padding: 80px 2rem;
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

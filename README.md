@@ -4,10 +4,10 @@
 
   <p>A collection of high-quality landing page templates to demonstrate various <b>design styles</b> to customers</p>
 
-![License](https://img.shields.io/badge/License-MIT-yellow.svg) ](LICENSE)
-![Astro](https://img.shields.io/badge/Astro-5-BC52EE.svg) ](https://astro.build)
-![Bun](https://img.shields.io/badge/Bun-FFCF00.svg) ](https://bun.sh)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-3178C6.svg) ](https://www.typescriptlang.org/)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Astro](https://img.shields.io/badge/Astro-5-BC52EE.svg)
+![Bun](https://img.shields.io/badge/Bun-FFCF00.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-3178C6.svg)
 
 <b>DotJumpDot Template screen</b> 🚀
 

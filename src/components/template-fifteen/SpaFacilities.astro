@@ -1,0 +1,146 @@
+---
+const facilities = [
+  {
+    icon: "🏊",
+    title: "Infinity Pool",
+    description: "Heated outdoor pool with stunning views"
+  },
+  {
+    icon: "💆",
+    title: "Thermal Suite",
+    description: "Steam rooms and saunas for ultimate relaxation"
+  },
+  {
+    icon: "🧘",
+    title: "Yoga Studio",
+    description: "Peaceful space for mindful movement"
+  },
+  {
+    icon: "🌿",
+    title: "Zen Garden",
+    description: "Tranquil outdoor meditation area"
+  },
+  {
+    icon: "☕",
+    title: "Organic Café",
+    description: "Healthy refreshments and herbal teas"
+  },
+  {
+    icon: "💆‍♀️",
+    title: "Treatment Rooms",
+    description: "Private suites with premium amenities"
+  }
+];
+---
+
+<section class="spa-facilities" id="facilities">
+  <div class="facilities-header">
+    <h2 class="facilities-title">Our Facilities</h2>
+    <p class="facilities-subtitle">Designed for your complete relaxation and rejuvenation</p>
+  </div>
+  <div class="facilities-grid">
+    {facilities.map((facility, index) => (
+      <div class="facility-card" style={`animation-delay: ${index * 0.1}s`}>
+        <div class="facility-icon">{facility.icon}</div>
+        <h3 class="facility-title">{facility.title}</h3>
+        <p class="facility-description">{facility.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .spa-facilities {
+    padding: 100px 3rem;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  }
+
+  .facilities-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .facilities-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #1e3a32;
+    margin: 0 0 1rem 0;
+  }
+
+  .facilities-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .facility-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .facility-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(90, 143, 126, 0.15);
+  }
+
+  .facility-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .facility-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #1e3a32;
+    margin: 0 0 1rem 0;
+  }
+
+  .facility-description {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .spa-facilities {
+      padding: 80px 2rem;
+    }
+
+    .facilities-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .facilities-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LearnHeader from '../components/template-seventeen/LearnHeader.astro';
+import LearnHero from '../components/template-seventeen/LearnHero.astro';
+import LearnStats from '../components/template-seventeen/LearnStats.astro';
+import LearnCategories from '../components/template-seventeen/LearnCategories.astro';
+import LearnCourses from '../components/template-seventeen/LearnCourses.astro';
+import LearnFooter from '../components/template-seventeen/LearnFooter.astro';
+---
+
+<Layout title="EduFlow - Master New Skills">
+  <main>
+    <LearnHeader />
+    <LearnHero />
+    <LearnStats />
+    <LearnCategories />
+    <LearnCourses />
+    <LearnFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.5;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+</style>

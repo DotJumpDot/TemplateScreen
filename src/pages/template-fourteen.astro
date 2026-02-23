@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EstateHeader from '../components/template-fourteen/EstateHeader.astro';
+import EstateHero from '../components/template-fourteen/EstateHero.astro';
+import EstateProperties from '../components/template-fourteen/EstateProperties.astro';
+import EstateServices from '../components/template-fourteen/EstateServices.astro';
+import EstateContact from '../components/template-fourteen/EstateContact.astro';
+import EstateFooter from '../components/template-fourteen/EstateFooter.astro';
+---
+
+<Layout title="LUXE - Premium Real Estate">
+  <main>
+    <EstateHeader />
+    <EstateHero />
+    <EstateProperties />
+    <EstateServices />
+    <EstateContact />
+    <EstateFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+  }
+
+  button {
+    font-family: inherit;
+  }
+</style>

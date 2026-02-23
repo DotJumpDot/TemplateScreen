@@ -1,0 +1,131 @@
+---
+const logo = "LENS";
+
+const navItems = [
+  { name: "Work", href: "#work" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Contact", href: "#contact" }
+];
+---
+
+<header class="photo-header">
+  <div class="header-container">
+    <a href="#" class="logo">{logo}</a>
+    <nav class="nav-menu">
+      {navItems.map(item => (
+        <a href={item.href} class="nav-link">{item.name}</a>
+      ))}
+    </nav>
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .photo-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    animation: slideDown 0.8s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .logo:hover {
+    letter-spacing: 0.4em;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #000;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #000;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+  }
+</style>

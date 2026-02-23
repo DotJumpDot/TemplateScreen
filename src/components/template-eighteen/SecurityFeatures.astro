@@ -1,0 +1,194 @@
+---
+---
+
+<section class="security-features" id="features">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Advanced <span class="highlight">Defense</span> Capabilities</h2>
+      <p class="section-description">
+        Comprehensive security suite designed to protect your organization from evolving cyber threats.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="card-glow"></div>
+        <div class="icon-wrapper">
+          <span class="icon">🛡️</span>
+        </div>
+        <h3 class="feature-title">Threat Intelligence</h3>
+        <p class="feature-text">
+          AI-driven analysis of global threat data to predict and prevent attacks before they happen.
+        </p>
+        <a href="#" class="learn-more">Learn more →</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-glow"></div>
+        <div class="icon-wrapper">
+          <span class="icon">🔐</span>
+        </div>
+        <h3 class="feature-title">Zero-Trust Access</h3>
+        <p class="feature-text">
+          Verify every user and device. Implement least-privilege access across your entire infrastructure.
+        </p>
+        <a href="#" class="learn-more">Learn more →</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-glow"></div>
+        <div class="icon-wrapper">
+          <span class="icon">☁️</span>
+        </div>
+        <h3 class="feature-title">Cloud Security</h3>
+        <p class="feature-text">
+          Unified protection for multi-cloud environments. Secure your AWS, Azure, and Google Cloud assets.
+        </p>
+        <a href="#" class="learn-more">Learn more →</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-glow"></div>
+        <div class="icon-wrapper">
+          <span class="icon">💻</span>
+        </div>
+        <h3 class="feature-title">Endpoint Protection</h3>
+        <p class="feature-text">
+          Defend every device on your network. Next-gen antivirus and EDR for complete endpoint visibility.
+        </p>
+        <a href="#" class="learn-more">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .security-features {
+    padding: 6rem 2rem;
+    background: #0a0f1c;
+    position: relative;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .highlight {
+    color: #00f3ff;
+    position: relative;
+    display: inline-block;
+  }
+
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #00f3ff;
+    opacity: 0.3;
+  }
+
+  .section-description {
+    color: #94a3b8;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 243, 255, 0.3);
+  }
+
+  .card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0, 243, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .feature-card:hover .card-glow {
+    opacity: 1;
+  }
+
+  .icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 243, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .feature-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .feature-text {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .learn-more {
+    color: #00f3ff;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
+  }
+
+  .learn-more:hover {
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .section-title { font-size: 2.5rem; }
+    .features-grid { grid-template-columns: 1fr; }
+  }
+</style>

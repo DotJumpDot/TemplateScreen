@@ -1,0 +1,105 @@
+---
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { name: "Instagram", href: "#" },
+  { name: "Behance", href: "#" },
+  { name: "LinkedIn", href: "#" }
+];
+---
+
+<footer class="photo-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <span class="footer-logo">LENS</span>
+      <p class="footer-tagline">Capturing moments, creating memories</p>
+    </div>
+    <div class="footer-social">
+      {socialLinks.map(link => (
+        <a href={link.href} class="social-link">{link.name}</a>
+      ))}
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} LENS Photography. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .photo-footer {
+    background: #000;
+    color: #fff;
+    padding: 4rem 6rem 2rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-logo {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0.3em;
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .social-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+  }
+
+  .social-link:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .photo-footer {
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .footer-social {
+      justify-content: center;
+    }
+  }
+</style>

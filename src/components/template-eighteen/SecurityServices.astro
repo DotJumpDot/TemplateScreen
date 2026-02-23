@@ -1,0 +1,301 @@
+---
+---
+
+<section class="security-showcase">
+  <div class="container">
+    <div class="showcase-content">
+      <h2 class="showcase-title">Real-Time <span class="highlight">Threat Monitoring</span></h2>
+      <p class="showcase-description">
+        Gain complete visibility into your network traffic. Identify anomalies and potential breaches instantly with our intuitive dashboard.
+      </p>
+      
+      <ul class="feature-list">
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Live Attack Map Visualization</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Automated Incident Response</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Detailed Forensic Reports</span>
+        </li>
+      </ul>
+
+      <a href="#" class="demo-btn">Request Live Demo</a>
+    </div>
+
+    <div class="showcase-visual">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="traffic-lights">
+            <span class="light red"></span>
+            <span class="light yellow"></span>
+            <span class="light green"></span>
+          </div>
+          <div class="terminal-title">admin@secure-core:~</div>
+        </div>
+        <div class="terminal-body">
+          <div class="line"><span class="prompt">$</span> ./init-defense-protocol.sh</div>
+          <div class="line system">Initializing CyberGuard Core v4.2.0...</div>
+          <div class="line success">[OK] Neural Engine Loaded</div>
+          <div class="line success">[OK] Firewalls Active (Region: US-East)</div>
+          <div class="line warning">[WARN] Suspicious packet detected from IP 192.168.4.22</div>
+          <div class="line action">>>> Engaging countermeasures...</div>
+          <div class="line success">[OK] Threat neutralized. Source IP blocked.</div>
+          <div class="line info">Scanning for additional vectors...</div>
+          <div class="cursor">_</div>
+        </div>
+      </div>
+      
+      <div class="stat-card card-1">
+        <div class="stat-header">Threats Blocked</div>
+        <div class="stat-value">1,248,932</div>
+        <div class="stat-trend positive">↑ 12% vs last week</div>
+      </div>
+      
+      <div class="stat-card card-2">
+        <div class="stat-header">Uptime</div>
+        <div class="stat-value">99.999%</div>
+        <div class="stat-trend neutral">Stable</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .security-showcase {
+    padding: 8rem 2rem;
+    background: linear-gradient(180deg, #0a0f1c 0%, #0d1224 100%);
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .showcase-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .highlight {
+    color: #bd00ff;
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: -4px;
+    right: -4px;
+    height: 12px;
+    background: rgba(189, 0, 255, 0.2);
+    z-index: -1;
+    transform: skewX(-10deg);
+  }
+
+  .showcase-description {
+    color: #94a3b8;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+    font-weight: 500;
+  }
+
+  .check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 243, 255, 0.1);
+    color: #00f3ff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+
+  .demo-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #bd00ff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(189, 0, 255, 0.1);
+  }
+
+  .demo-btn:hover {
+    background: rgba(189, 0, 255, 0.1);
+    box-shadow: 0 0 25px rgba(189, 0, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .showcase-visual {
+    position: relative;
+  }
+
+  .terminal-window {
+    background: #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Fira Code', monospace;
+    position: relative;
+    z-index: 1;
+  }
+
+  .terminal-header {
+    background: #0f172a;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .traffic-lights {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .red { background: #ff5f56; }
+  .yellow { background: #ffbd2e; }
+  .green { background: #27c93f; }
+
+  .terminal-title {
+    margin-left: 1rem;
+    color: #64748b;
+    font-size: 0.875rem;
+  }
+
+  .terminal-body {
+    padding: 1.5rem;
+    color: #e2e8f0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    height: 300px;
+    background: rgba(15, 23, 42, 0.95);
+  }
+
+  .line { margin-bottom: 0.5rem; }
+  .prompt { color: #bd00ff; margin-right: 0.5rem; }
+  .system { color: #94a3b8; }
+  .success { color: #10b981; }
+  .warning { color: #f59e0b; }
+  .action { color: #00f3ff; }
+  .info { color: #64748b; }
+
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: #e2e8f0;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .stat-card {
+    position: absolute;
+    background: rgba(30, 41, 59, 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    min-width: 200px;
+  }
+
+  .card-1 {
+    top: -30px;
+    right: -40px;
+    animation: float 6s infinite ease-in-out;
+  }
+
+  .card-2 {
+    bottom: -30px;
+    left: -40px;
+    animation: float 6s infinite ease-in-out 1.5s;
+  }
+
+  .stat-header {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-trend {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .positive { color: #10b981; }
+  .neutral { color: #94a3b8; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  @media (max-width: 1024px) {
+    .container { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+    .showcase-visual { margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .feature-list { display: inline-block; text-align: left; }
+    .card-1 { right: 0; }
+    .card-2 { left: 0; }
+  }
+
+  @media (max-width: 768px) {
+    .showcase-title { font-size: 2.25rem; }
+    .stat-card { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin-top: 1rem; display: inline-block; margin-right: 1rem; width: calc(50% - 1rem); min-width: auto; }
+  }
+</style>

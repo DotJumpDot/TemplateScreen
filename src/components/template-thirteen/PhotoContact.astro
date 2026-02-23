@@ -1,0 +1,203 @@
+---
+---
+
+<section class="photo-contact" id="contact">
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2 class="contact-title">Let's Create Together</h2>
+      <p class="contact-description">
+        Ready to bring your vision to life? Get in touch and let's discuss your project.
+      </p>
+      <div class="contact-details">
+        <div class="detail-item">
+          <span class="detail-label">Email</span>
+          <span class="detail-value">hello@lens.com</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Phone</span>
+          <span class="detail-value">+1 (555) 123-4567</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">New York, NY</span>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <select required>
+          <option value="">Select Service</option>
+          <option value="portrait">Portrait Photography</option>
+          <option value="architecture">Architecture</option>
+          <option value="landscape">Landscape</option>
+          <option value="events">Events</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Tell me about your project" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="submit-button">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .photo-contact {
+    padding: 100px 6rem;
+    background: #fff;
+  }
+
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+
+  .contact-info {
+    animation: fadeInLeft 0.8s ease-out;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .contact-title {
+    font-size: 3rem;
+    font-weight: 200;
+    color: #000;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .contact-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.7;
+    margin: 0 0 3rem 0;
+    font-weight: 300;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .detail-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: #999;
+    text-transform: uppercase;
+  }
+
+  .detail-value {
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 300;
+  }
+
+  .contact-form {
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 300;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #999;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #000;
+  }
+
+  .form-group select {
+    cursor: pointer;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .submit-button {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 1.2rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 1rem;
+  }
+
+  .submit-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 1024px) {
+    .photo-contact {
+      padding: 80px 2rem;
+    }
+
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>

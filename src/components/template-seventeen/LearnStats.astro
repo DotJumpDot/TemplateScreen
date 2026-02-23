@@ -1,0 +1,81 @@
+---
+const stats = [
+  { value: '250k+', label: 'Students Worldwide', icon: '🌍' },
+  { value: '5,000+', label: 'Video Courses', icon: '📹' },
+  { value: '1,200+', label: 'Expert Mentors', icon: '👨‍🏫' },
+  { value: '4.8', label: 'Student Rating', icon: '⭐' },
+];
+---
+
+<section class="learn-stats">
+  <div class="container">
+    <div class="stats-grid">
+      {stats.map(stat => (
+        <div class="stat-card">
+          <div class="icon">{stat.icon}</div>
+          <div class="content">
+            <h3>{stat.value}</h3>
+            <p>{stat.label}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .learn-stats {
+    background: #1e293b;
+    padding: 4rem 0;
+    color: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: white;
+  }
+
+  .content p {
+    font-size: 0.875rem;
+    color: #94a3b8;
+  }
+</style>

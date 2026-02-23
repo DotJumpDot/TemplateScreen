@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StartupHeader from '../components/template-sixteen/StartupHeader.astro';
+import StartupHero from '../components/template-sixteen/StartupHero.astro';
+import StartupFeatures from '../components/template-sixteen/StartupFeatures.astro';
+import StartupPricing from '../components/template-sixteen/StartupPricing.astro';
+import StartupContact from '../components/template-sixteen/StartupContact.astro';
+import StartupFooter from '../components/template-sixteen/StartupFooter.astro';
+---
+
+<Layout title="NOVA - Build the Future">
+  <main>
+    <StartupHeader />
+    <StartupHero />
+    <StartupFeatures />
+    <StartupPricing />
+    <StartupContact />
+    <StartupFooter />
+  </main>
+</Layout>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+  }
+
+  button {
+    font-family: inherit;
+  }
+</style>

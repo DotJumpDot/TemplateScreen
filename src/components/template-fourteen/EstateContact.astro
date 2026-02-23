@@ -1,0 +1,241 @@
+---
+---
+
+<section class="estate-contact" id="contact">
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2 class="contact-title">Let's Find Your Dream Home</h2>
+      <p class="contact-description">
+        Contact our team of experienced real estate professionals to begin your journey to exceptional living.
+      </p>
+      <div class="contact-details">
+        <div class="detail-item">
+          <span class="detail-icon">📍</span>
+          <div>
+            <span class="detail-label">Address</span>
+            <span class="detail-value">123 Luxury Avenue, Beverly Hills, CA 90210</span>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">📞</span>
+          <div>
+            <span class="detail-label">Phone</span>
+            <span class="detail-value">+1 (555) 987-6543</span>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">✉️</span>
+          <div>
+            <span class="detail-label">Email</span>
+            <span class="detail-value">contact@luxerealestate.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" placeholder="First Name" required />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Last Name" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email Address" required />
+      </div>
+      <div class="form-group">
+        <input type="tel" placeholder="Phone Number" />
+      </div>
+      <div class="form-group">
+        <select required>
+          <option value="">Interested In</option>
+          <option value="buying">Buying Property</option>
+          <option value="selling">Selling Property</option>
+          <option value="renting">Renting Property</option>
+          <option value="investing">Investment</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Tell us about your requirements" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="submit-button">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .estate-contact {
+    padding: 100px 3rem;
+    background: #0a0a0a;
+  }
+
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+
+  .contact-info {
+    animation: fadeInLeft 0.8s ease-out;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .contact-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .contact-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin: 0 0 3rem 0;
+    font-weight: 300;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .detail-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .detail-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .detail-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #d4af37;
+    text-transform: uppercase;
+  }
+
+  .detail-value {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+  }
+
+  .contact-form {
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+  }
+
+  .form-group select {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .submit-button {
+    width: 100%;
+    background: linear-gradient(135deg, #d4af37 0%, #b8960c 100%);
+    color: #121212;
+    border: none;
+    padding: 1.25rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+  }
+
+  @media (max-width: 1024px) {
+    .estate-contact {
+      padding: 80px 2rem;
+    }
+
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
