@@ -1,0 +1,359 @@
+---
+const projects = [
+  {
+    title: "Global Bank Digital Transformation",
+    category: "Financial Services",
+    description: "Complete digital overhaul for a Fortune 500 bank, resulting in 40% increase in customer engagement.",
+    metrics: { value: "40%", label: "Engagement Increase" },
+    color: "#1e40af"
+  },
+  {
+    title: "Healthcare System Integration",
+    category: "Healthcare",
+    description: "Unified patient management system across 50+ hospitals, improving operational efficiency by 60%.",
+    metrics: { value: "60%", label: "Efficiency Gain" },
+    color: "#059669"
+  },
+  {
+    title: "E-commerce Platform Launch",
+    category: "Retail",
+    description: "Built scalable e-commerce infrastructure handling 1M+ daily transactions with 99.9% uptime.",
+    metrics: { value: "1M+", label: "Daily Transactions" },
+    color: "#7c3aed"
+  },
+  {
+    title: "Manufacturing Process Optimization",
+    category: "Manufacturing",
+    description: "Implemented smart factory solutions reducing production costs by 35% while increasing output.",
+    metrics: { value: "35%", label: "Cost Reduction" },
+    color: "#ea580c"
+  },
+  {
+    title: "Smart City Infrastructure",
+    category: "Government",
+    description: "Developed IoT-based city management system serving 2 million residents across 5 cities.",
+    metrics: { value: "2M", label: "Residents Served" },
+    color: "#0891b2"
+  },
+  {
+    title: "AI-Powered Customer Service",
+    category: "Technology",
+    description: "Deployed AI chatbot system handling 80% of customer inquiries with 95% satisfaction rate.",
+    metrics: { value: "95%", label: "Satisfaction Rate" },
+    color: "#dc2626"
+  }
+];
+
+const clients = [
+  "Microsoft", "Google", "Amazon", "Meta", "Apple", "Netflix", "Tesla", "IBM"
+];
+---
+
+<section class="corporate-portfolio" id="portfolio">
+  <div class="portfolio-container">
+    <div class="portfolio-header">
+      <span class="section-label">Our Portfolio</span>
+      <h2 class="section-title">Success Stories That Speak</h2>
+      <p class="section-subtitle">
+        Explore our track record of delivering transformative solutions across industries worldwide.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+      {projects.map((project, index) => (
+        <div class="project-card" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="project-image">
+            <div class="image-overlay" style={`background: linear-gradient(135deg, ${project.color}dd, ${project.color})`}>
+              <div class="metric-badge">
+                <span class="metric-value">{project.metrics.value}</span>
+                <span class="metric-label">{project.metrics.label}</span>
+              </div>
+            </div>
+            <div class="placeholder-pattern" style={`background: ${project.color}15`}>
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" stroke={project.color} stroke-width="0.5" stroke-dasharray="4 4"/>
+                <circle cx="50" cy="50" r="25" stroke={project.color} stroke-width="0.5"/>
+                <circle cx="50" cy="50" r="10" fill={project.color} fill-opacity="0.2"/>
+              </svg>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">{project.category}</span>
+            <h3 class="project-title">{project.title}</h3>
+            <p class="project-description">{project.description}</p>
+            <a href="#" class="project-link">
+              View Case Study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="clients-section">
+      <h3 class="clients-title">Trusted by Industry Leaders</h3>
+      <div class="clients-grid">
+        {clients.map((client, index) => (
+          <div class="client-logo" style={`animation-delay: ${index * 0.05}s`}>
+            <span class="client-name">{client}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .corporate-portfolio {
+    padding: 120px 2rem;
+    background: white;
+  }
+
+  .portfolio-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .portfolio-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .project-card {
+    background: #f8fafc;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  }
+
+  .project-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .placeholder-pattern {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .placeholder-pattern svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .project-card:hover .image-overlay {
+    opacity: 0.95;
+  }
+
+  .metric-badge {
+    background: white;
+    border-radius: 16px;
+    padding: 1.25rem 2rem;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover .metric-badge {
+    transform: translateY(0);
+  }
+
+  .metric-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1;
+  }
+
+  .metric-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+  }
+
+  .project-content {
+    padding: 2rem;
+  }
+
+  .project-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1e40af;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .project-link:hover {
+    gap: 0.75rem;
+    color: #3b82f6;
+  }
+
+  .clients-section {
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .clients-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #64748b;
+    margin: 0 0 2rem 0;
+  }
+
+  .clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .client-logo {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem 2rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .client-logo:hover {
+    background: white;
+    border-color: #cbd5e1;
+    transform: translateY(-3px);
+  }
+
+  .client-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 1024px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section-title {
+      font-size: 2.25rem;
+    }
+
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .clients-grid {
+      gap: 1rem;
+    }
+
+    .client-logo {
+      padding: 1rem 1.5rem;
+    }
+  }
+</style>
